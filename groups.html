@@ -1,12 +1,18 @@
 ---
 layout: page
-title: Local Groups
+title: Groups
 ---
+
+<h4>
+  Area-specific collections that hold regular events, meetings, and/or
+  trainings. May be part of a larger
+  <a href="../orgs">organisation or coalition</a>.
+</h4>
 
 <ul>
   {% for group in site.groups %}
   <li>
-    <a href="groups/{{ group.slug }}">{{ group.title }}</a>
+    <a href="{{ group.slug }}">{{ group.title }}</a>
   </li>
   {% endfor %}
 </ul>

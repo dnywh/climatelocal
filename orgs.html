@@ -1,12 +1,17 @@
 ---
 layout: page
-title: Larger Orgs
+title: Organisations
 ---
+
+<h4>
+  Any larger group or coalition that expands across different areas.
+  Organisations may contain area-specific <a href="../groups">groups</a>.
+</h4>
 
 <ul>
   {% for org in site.orgs %}
   <li>
-    <a href="orgs/{{ org.slug }}">{{ org.title }}</a>
+    <a href="{{ org.slug }}">{{ org.title }}</a>
   </li>
   {% endfor %}
 </ul>

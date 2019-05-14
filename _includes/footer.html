@@ -1,0 +1,46 @@
+<footer class="site-footer h-card">
+  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+
+  <div class="wrapper">
+
+    
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <h3 class="footer-heading">Show me all of the...</h3>
+        <ul class="contact-list">
+          <li class="p-name">
+            <a href="/orgs">Organisations</a>
+          </li>
+          <li class="p-name">
+              <a href="/groups">Groups</a>
+          </li>
+          <li class="p-name">
+              <a href="/people">People</a>
+          </li>
+          <input type="text" name="search" placeholder="Search..."><input type="button" value="Search">
+        </ul>
+        
+
+        <ul class="contact-list">
+          <li><a href="/submit">Submit something</a></li>
+          <li><a href="/about">About us</a></li>
+        </ul>
+
+        
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <h3 class="footer-heading">Elsewhere</h3>
+        {%- include social.html -%}
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <h3 class="footer-heading">Earthlist</h3>
+        <p>{{- site.description | escape -}}</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
