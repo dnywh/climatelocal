@@ -1,0 +1,12 @@
+---
+layout: page
+title: Larger Orgs
+---
+
+<ul>
+  {% for org in site.orgs %}
+  <li>
+    <a href="orgs/{{ org.slug }}">{{ org.title }}</a>
+  </li>
+  {% endfor %}
+</ul>

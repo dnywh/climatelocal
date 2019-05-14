@@ -1,0 +1,24 @@
+---
+layout: page
+---
+
+<div>
+  <h2>{{ page.name }}</h2>
+  <h4>{{ page.country }}</h4>
+
+  <h5>Local groups</h5>
+  <ul>
+    {% for group in page.local-groups %}
+    <li>
+      <a href="../groups/{{ group }}">{{ group }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <h5>Key issues</h5>
+  <ul>
+    {% for issue in page.key-issues %}
+    <li>{{ issue }}</li>
+    {% endfor %}
+  </ul>
+</div>

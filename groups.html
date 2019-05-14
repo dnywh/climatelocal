@@ -1,0 +1,12 @@
+---
+layout: page
+title: Local Groups
+---
+
+<ul>
+  {% for group in site.groups %}
+  <li>
+    <a href="groups/{{ group.slug }}">{{ group.title }}</a>
+  </li>
+  {% endfor %}
+</ul>

@@ -1,0 +1,37 @@
+---
+layout: page
+---
+
+<div>
+  <h2>{{ page.title }}</h2>
+  <h4>
+    Website: <a href="{{ page.website }}">{{ page.website }}</a>
+  </h4>
+
+  <h4>Type</h4>
+  <p>{{ page.type }}</p>
+
+  <h4>Mission</h4>
+  <p>{{ page.mission }}</p>
+
+  <h4>Headquarters</h4>
+  <p>{{ page.headquarters }}</p>
+
+  <h5>Local groups</h5>
+  <ul>
+    {% for group in page.groups %}
+    <li>
+      <a href="../groups/{{ group }}">{{ group }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <h5>Key people</h5>
+  <ul>
+    {% for person in page.key-people %}
+    <li>
+      <a href="../people/{{ person }}">{{ person }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

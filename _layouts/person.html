@@ -1,0 +1,27 @@
+---
+layout: page
+---
+
+<div>
+  <img src="{{ page.photo }}" alt="{{ page.title }}" />
+  <h2>{{ page.title }}</h2>
+  <h4>
+    Website: <a href="{{ page.website }}">{{ page.website }}</a>
+  </h4>
+
+  {% if page.email %}
+  <h4>Email</h4>
+  <p>
+    <a href="mailto:{{ page.email }}">{{ page.email }}</a>
+  </p>
+  {% endif %}
+
+  <h5>Orgs</h5>
+  <ul>
+    {% for org in page.orgs %}
+    <li>
+      <a href="../orgs/{{ org }}">{{ org }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

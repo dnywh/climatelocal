@@ -1,0 +1,12 @@
+---
+layout: page
+title: Areas
+---
+
+<ul>
+  {% for area in site.areas %}
+  <li>
+    <a href="areas/{{ area.slug }}">{{ area.title }}</a>
+  </li>
+  {% endfor %}
+</ul>
