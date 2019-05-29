@@ -13,14 +13,14 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Earthlist
+title: Climate Local
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
-  A place for regular people to find climate movements. Not just for the greenies, the hippies, the young. We need everyone.
+  Turning fencesitters into climate activists
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: earthlist
-github_username:  earthlist
+url: "http://climatelocal.org" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: climatelocalorg
+github_username:  climatelocal
 
 # Build settings
 markdown: kramdown
