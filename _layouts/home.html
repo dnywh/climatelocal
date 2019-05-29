@@ -1,85 +1,22 @@
 ---
 layout: default
 ---
+<h3>USA</h3>
+<ul>
+  {% for area in site.areas %} {% if area.country == "USA" and area.type !=
+  "sub" %}
+  <li>
+    <a href="../areas/{{ area.slug }}">{{ area.title }}</a>
+  </li>
+  {% endif %} {% endfor %}
+</ul>
 
-<div class="home">
-  <h1>Get involved</h1>
-  <p>
-    I'm in
-    <input id="find-me" type="button" value="🧭" />
-    <a id="map-link" target="blank"></a>
-    <input type="text" name="area-finder" placeholder="New York City" />
-    <input type="button" value="Go" />
-  </p>
-  <p id="status"></p>
-  <p>
-    <small
-      >Or, <a href="/search">search directly</a> for an organisation, place, or
-      person.</small
-    >
-  </p>
-
-  <img
-    src="assets/demonstration.jpg"
-    alt="A bunch of normal folk getting mobilised."
-  />
-
-  <p>
-    Only through mass demonstration from everyday people will political action
-    on the climate crisis truly begin. We need <em>you</em>.
-  </p>
-
-  <img
-    src="assets/technology.jpg"
-    alt="A bunch of normal folk getting mobilised."
-  />
-
-  <p>
-    The technology and willpower for massive change are already here. Only
-    politics and dirty fossil fuel business lobbyists stand in our way.
-  </p>
-
-  <hr />
-
-  <p>
-    "Join a face-to-face community of people who also “get it.” This is critical
-    for sanity. It feels so encouraging, empowering. And it quickly puts you
-    light years ahead of where you’d otherwise be in terms of your thinking and
-    agency. Stand on the shoulders of giants." —
-    <a href="https://twitter.com/ClimateHuman/status/1074925623590567936?s=20">
-      Peter Kalmus</a
-    >, climate scientist
-  </p>
-</div>
-
-<script>
-  function geoFindMe() {
-    const status = document.querySelector("#status");
-    const mapLink = document.querySelector("#map-link");
-
-    mapLink.href = "";
-    mapLink.textContent = "";
-
-    function success(position) {
-      const latitude = position.coords.latitude;
-      const longitude = position.coords.longitude;
-
-      status.textContent = "";
-      mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
-      mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
-    }
-
-    function error() {
-      status.textContent = "Unable to retrieve your location. Try typing it in";
-    }
-
-    if (!navigator.geolocation) {
-      status.textContent = "Geolocation is not supported by your browser";
-    } else {
-      status.textContent = "Locating…";
-      navigator.geolocation.getCurrentPosition(success, error);
-    }
-  }
-
-  document.querySelector("#find-me").addEventListener("click", geoFindMe);
-</script>
+<h3>Australia</h3>
+<ul>
+  {% for area in site.areas %} {% if area.country == "Australia" and area.type
+  != "sub" %}
+  <li>
+    <a href="../areas/{{ area.slug }}">{{ area.title }}</a>
+  </li>
+  {% endif %} {% endfor %}
+</ul>
