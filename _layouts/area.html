@@ -5,8 +5,51 @@ layout: page
 <h2>{{ page.name }}</h2>
 <h4>{{ page.country }}</h4>
 <h5>Last updated on {{ page.last-updated | date_to_long_string: "ordinal" }}</h5>
+<h5>Climate score: {{ page.climate-score }}</h5>
+<p>{{ content }}</p>
 
-<h2>Upcoming events</h2>
+<hr>
+
+<!-- Get involved -->
+<h2>Get involved</h2>
+<p>Local training or volunteering opportunities.</p>
+<ul>
+  {% for opp in page.local-opportunities %}
+  <li>
+    <h4>{{ opp.name }}</h4>
+    <p><small>{{ opp.category }}</small></p>
+    <p><a href="{{ opp.website }}"><img src="{{ opp.image-url }}" alt="Image for {{ opp.name }}"></a></p>
+    <p>{{ opp.notes }}</p>
+    <p>
+      <a href="{{ opp.url }}">{{ opp.cta }}</a>
+    </p>
+  </li>
+  {% endfor %}
+</ul>
+
+<hr>
+
+<!-- Get involved -->
+<h2>Make quick, locally relevant changes</h2>
+<p></p>
+<ul>
+  {% for action in page.individual-actions %}
+  <li>
+    <h4>{{ action.name }}</h4>
+    <p><small>Requires about {{ action.investment }}</small></p>
+    <p>{{ action.notes }}</p>
+    <p>
+      <a href="{{ action.url }}">{{ action.cta }}</a>
+    </p>
+  </li>
+  {% endfor %}
+</ul>
+
+<hr>
+
+<!-- Get in the know -->
+<h2>Mobilise</h2>
+<p>Upcoming marches, rallys, and other events.</p>
 <ul>
   {% for event in page.events %}
   <li>
@@ -22,24 +65,17 @@ layout: page
 
 <a href="#">Show past events</a>
 
+<hr>
 
-<!-- Sub area guides -->
-<h2>Sub areas</h2>
-<ul>
-  {% for sub in page.sub-areas %}
-  <li>
-    <a href="../groups/{{ sub }}">{{ sub }}</a>
-  </li>
-  {% endfor %}
-</ul>
-
-<h2>Local groups</h2>
+<h2>Find your people</h2>
+<p>Chapter and branch groups within this area.</p>
 <ul>
   {% for group in page.local-groups %}
   <li>
     <img src="{{ group.image-url }}" alt="Avatar for {{ group.name }}">
     <h4>{{ group.name }}</h4>
-    <a href="../groups/{{ group.website }}">{{ group.website }}</a>
+    <p>Part of {{ group.parent }}</p>
+    <p><a href="../groups/{{ group.website }}">Visit</a></p>
   </li>
   {% endfor %}
 </ul>
