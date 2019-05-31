@@ -2,6 +2,7 @@
 layout: area
 title: New York City
 country: USA
+organiser: Danny White
 climate-score: 8
 local-groups: 
   - name: 350.org New York City
@@ -45,7 +46,6 @@ local-opportunities:
     image-url: http://www.theyouthfarm.org/wp-content/uploads/2015/03/Youth_Farm_Logo_AltLayout_300px_wide-e1425268664392.png
     notes: Get your hands in the soil and enjoy the sunshine! Our Volunteer Days and Open Hours are open to the public, just stop on by!
     cta: See more
-last-updated: 2019-05-29 17:00:00 -0400
 events:
   - title: World Oceans Week
     date: 2019-06-03 09:45:00 -0400
