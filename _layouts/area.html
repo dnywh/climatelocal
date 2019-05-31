@@ -12,7 +12,7 @@ layout: page
 <!-- Get involved -->
 <h2>Get involved</h2>
 <p>Local training or volunteering opportunities.</p>
-<ul>
+<ul class="local-opportunities">
   {% for opp in page.local-opportunities %}
   <li>
     <p><img src="{{ opp.image-url }}" alt="Image for {{ opp.name }}"></p>
@@ -31,7 +31,7 @@ layout: page
 <!-- Individual action -->
 <h2>Make locally relevant changes</h2>
 <p>Take the first steps through individual action.</p>
-<ul>
+<ul class="individual-actions">
   {% for action in page.individual-actions %}
   <li>
     <p>Requires about {{ action.investment }}</p>
@@ -49,14 +49,13 @@ layout: page
 <!-- Events -->
 <h2>Mobilise</h2>
 <p>Upcoming marches, rallys, and other events.</p>
-<ul>
+<ul class="events">
   {% for event in page.events %}
   <li>
     <p>{{ event.date | date_to_long_string: "ordinal" }}</p>
     <h4>{{ event.title }}</h4>
     <p>Organised by {{ event.organiser }}</a> </p>
     <p><a href="{{ event.url }}">View</a></p>
-
   </li>
   {% endfor %}
 </ul>
@@ -66,13 +65,13 @@ layout: page
 <!-- Groups -->
 <h2>Find your people</h2>
 <p>Chapter and branch groups within this area.</p>
-<ul>
+<ul class="local-groups">
   {% for group in page.local-groups %}
   <li>
-    <img src="{{ group.image-url }}" alt="Avatar for {{ group.name }}">
+    <p><img src="{{ group.image-url }}" alt="Avatar for {{ group.name }}"></p>
     <h4>{{ group.name }}</h4>
     <p>Part of {{ group.parent }}</p>
-    <p><a href="../groups/{{ group.url }}">View</a></p>
+    <p><a href="{{ group.url }}">View</a></p>
   </li>
   {% endfor %}
 </ul>
