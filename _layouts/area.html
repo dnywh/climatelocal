@@ -4,8 +4,7 @@ layout: page
 
 <h2>{{ page.name }}</h2>
 <h4>{{ page.country }}</h4>
-<h5>Chapter organiser: {{ page.organiser }}</h5>
-<h5>Climate score: {{ page.climate-score }}</h5>
+<h5>Contributers: {{ page.contributers }}</h5>
 <p>{{ content }}</p>
 
 <hr>
@@ -16,9 +15,9 @@ layout: page
 <ul>
   {% for opp in page.local-opportunities %}
   <li>
+    <p><img src="{{ opp.image-url }}" alt="Image for {{ opp.name }}"></p>
     <h4>{{ opp.name }}</h4>
-    <p><small>{{ opp.category }}</small></p>
-    <p><a href="{{ opp.website }}"><img src="{{ opp.image-url }}" alt="Image for {{ opp.name }}"></a></p>
+    <p><small>Drawdown solutions: {{ opp.category }}</small></p>
     <p>{{ opp.notes }}</p>
     <p>
       <a href="{{ opp.url }}">{{ opp.cta }}</a>
@@ -29,14 +28,14 @@ layout: page
 
 <hr>
 
-<!-- Get involved -->
-<h2>Make quick, locally relevant changes</h2>
-<p></p>
+<!-- Individual action -->
+<h2>Make locally relevant changes</h2>
+<p>Take the first steps through individual action.</p>
 <ul>
   {% for action in page.individual-actions %}
   <li>
+    <p>Requires about {{ action.investment }}</p>
     <h4>{{ action.name }}</h4>
-    <p><small>Requires about {{ action.investment }}</small></p>
     <p>{{ action.notes }}</p>
     <p>
       <a href="{{ action.url }}">{{ action.cta }}</a>
@@ -47,17 +46,16 @@ layout: page
 
 <hr>
 
-<!-- Get in the know -->
+<!-- Events -->
 <h2>Mobilise</h2>
 <p>Upcoming marches, rallys, and other events.</p>
 <ul>
   {% for event in page.events %}
   <li>
-    <strong>{{ event.title }}</strong>
     <p>{{ event.date | date_to_long_string: "ordinal" }}</p>
+    <h4>{{ event.title }}</h4>
     <p>Organised by {{ event.organiser }}</a> </p>
-    <p><a href="{{ event.website }}">{{ event.website }}</a></p>
-    <img src="{{ event.image-url }}" alt="Image preview for {{ event.title }}">
+    <p><a href="{{ event.url }}">{{ event.url }}</a></p>
 
   </li>
   {% endfor %}
