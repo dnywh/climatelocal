@@ -1,15 +1,93 @@
+:root {
+  /* Sizing */
+  --padding-item: 4em;
+  --width-card: 40em;
+  --colour-grey-light: #e5e5e5;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+hr {
+  border: none;
+  background-color: var(--colour-grey-light);
+  height: 1px;
+}
+
+main {
   margin: 1em;
 }
+
+main h1 {
+  font-weight: 900;
+  font-size: 4em;
+  margin: 0;
+}
+
+header h1 {
+  font-size: 1.15em;
+  color: grey;
+  font-weight: 800;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5em;
+}
+
+.center {
+  text-align: center;
+}
+
+h2 {
+  font-weight: 800;
+  font-size: 2.25em;
+  margin: 0;
+}
+
+h4 {
+  font-size: 1.6em;
+  font-weight: 800;
+  margin: 0;
+}
+
+/* Used for state and country */
+h5 {
+  font-size: 1em;
+  font-weight: 800;
+  margin: 1em 0 2em;
+}
+
+.major-info p {
+  font-size: 1.15em;
+}
+
+p.minor-info {
+  color: grey;
+  font-size: 0.75em;
+}
+
 
 img {
   max-width: 100%;
 }
 
-h1 {
-  font-size: 3em;
+div.intro {
+  margin-bottom: 3em;
 }
+
+.avatar {
+  width: 2em;
+  height: 2em;
+  text-decoration: none;
+}
+  .avatar img {
+    width: 2em;
+    height: 2em;
+    border-radius: 100%;
+  }
 
 ul.events,
 ul.local-opportunities,
@@ -38,14 +116,14 @@ ul.individual-actions {
   
     /* local-opportunities */
     ul.local-opportunities > li {
-      max-width: 40em;
-      margin-bottom: 4em;
+      max-width: var(--width-card);
+      margin-bottom: var(--padding-item);
     }
 
     /* individual-actions */
     ul.individual-actions > li {
-      max-width: 40em;
-      margin-bottom: 4em;
+      max-width: var(--width-card);
+      margin-bottom: var(--padding-item);
     }
 
     /* local-groups */
@@ -54,5 +132,5 @@ ul.individual-actions {
     }
       ul.local-groups > li {
         max-width: 10em;
-        margin-right: 4em;
+        margin-right: var(--padding-item);
       }

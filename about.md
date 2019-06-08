@@ -3,9 +3,10 @@ layout: page
 title: About
 permalink: /about
 ---
+ClimateLocal exists to:
 
-## 1. Normalising climate conversation
-ClimateLocal exists to normalise and increase conversation about climate change amongst the general public.
+## 1. Normalise climate conversation
+Normalise and increase conversation about climate change amongst the general public. Change the political and ethical tone into a quality of life one.
 
-## 2. Inspiring climate action
-ClimateLocal exists to turn 'fence-sitting' members of the general public into climate activists. We inspire action by surfacing constructive, creative opportunities within localities.
+## 2. Inspire climate action
+Turn 'fence-sitting' members of the general public into climate activists. Inspire action by surfacing practical, constructive, and creative opportunities within peoples' localities.

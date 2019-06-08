@@ -1,8 +1,9 @@
 ---
 layout: area
 title: New York City
+state: New York
 country: USA
-contributers: Danny White
+contributers: danny
 climate-score: 8
 local-groups: 
   - name: 350.org New York City
@@ -74,14 +75,12 @@ events:
     date: 2019-06-03 09:45:00 -0400
     organiser: The Explorers Club
     url: https://explorers.org/events/detail/world_oceans_week_2019_monday
-  - title: Rise For Climate
-    date: 2019-09-08 09:00:00 -0400
+  - title: Global Climate Strike
+    date: 2019-09-20 09:00:00 -0400
     organiser: 350.org
-    url: https://riseforclimate.org
+    url: https://globalclimatestrike.net
   
 ---
 New York City is one of several climate-progressive cities in the USA. In early 2019 the city council [passed](https://iqconnect.lmhostediq.com/iqextranet/view_newsletter.aspx?id=160636&c=NYCCSPK#climate) the [The Climate Mobilization Act](https://www.ecowatch.com/a-green-new-deal-for-new-york-city-2635360256.html)—its own The Green New Deal—with a focus on cutting greenhouse gas emissions from large and medium-sized buildings. In 2018 the city divested from fossil fuels...
 
-
-## Local challenges
 New York City will likely be the most at-risk American city of natural disasters enhanced by climate change. Experts forsee worsening [flooding](http://ccir.ciesin.columbia.edu/nyc/ccir-ny_q2d.html), heatwaves...

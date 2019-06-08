@@ -1,13 +1,28 @@
 ---
-layout: page
+layout: default
 ---
 
-<h2>{{ page.name }}</h2>
-<h4>{{ page.country }}</h4>
-<h5>Contributers: {{ page.contributers }}</h5>
-<p>{{ content }}</p>
+<div class="intro">
+  <h1>{{ page.title }}</h1>
+  <h5>{{ page.state }}, {{ page.country }}</h5>
+  <div class="major-info">{{ content }}</div>
 
-<hr>
+  <p class="minor-info">
+    {% for i in page.contributers %}
+    <a class="avatar" href="{{ site.data.contributers[i].link-url }}" target="_blank">
+      <img src="{{ site.data.contributers[i].image-url }}"
+        alt="Picture for {{ site.data.contributers[i].first-name }} {{ site.data.contributers[i].last-name }}"
+        title="{{ site.data.contributers[i].first-name }} {{ site.data.contributers[i].last-name }}">
+    </a>
+    {% endfor %}
+
+    Curated by
+    {% for i in page.contributers %}
+    {{ site.data.contributers[i].first-name }}
+    {% endfor %}
+  </p>
+</div>
+
 
 <!-- Get involved -->
 <h2>Get involved</h2>
@@ -20,7 +35,7 @@ layout: page
     <p><small>Drawdown solutions: {{ opp.category }}</small></p>
     <p>{{ opp.notes }}</p>
     <p>
-      <a href="{{ opp.url }}">{{ opp.cta }}</a>
+      <a href="{{ opp.url }}" target="_blank">{{ opp.cta }}</a>
     </p>
   </li>
   {% endfor %}
@@ -34,11 +49,11 @@ layout: page
 <ul class="individual-actions">
   {% for action in page.individual-actions %}
   <li>
-    <p>Requires about {{ action.investment }}</p>
+    <p class="minor-info">Requires about {{ action.investment }}</p>
     <h4>{{ action.name }}</h4>
     <p>{{ action.notes }}</p>
     <p>
-      <a href="{{ action.url }}">{{ action.cta }}</a>
+      <a href="{{ action.url }}" target="_blank">{{ action.cta }}</a>
     </p>
   </li>
   {% endfor %}
@@ -53,9 +68,9 @@ layout: page
   {% for event in page.events %}
   <li>
     <p>{{ event.date | date_to_long_string: "ordinal" }}</p>
-    <h4>{{ event.title }}</h4>
+    <p><strong>{{ event.title }}</strong></p>
     <p>Organised by {{ event.organiser }}</a> </p>
-    <p><a href="{{ event.url }}">View</a></p>
+    <p><a href="{{ event.url }}" target="_blank">View</a></p>
   </li>
   {% endfor %}
 </ul>
@@ -71,7 +86,7 @@ layout: page
     <p><img src="{{ group.image-url }}" alt="Avatar for {{ group.name }}"></p>
     <h4>{{ group.name }}</h4>
     <p>Part of {{ group.parent }}</p>
-    <p><a href="{{ group.url }}">View</a></p>
+    <p><a href="{{ group.url }}" target="_blank">View</a></p>
   </li>
   {% endfor %}
 </ul>
