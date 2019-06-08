@@ -1,24 +1,64 @@
 ---
 layout: default
 ---
-<h1 class="center">Let's mobilise.</h1>
-<p class="major-info center">We have the solutions to the climate crisis. We have the willpower. We're making the mass movement.</p>
-<h3>USA</h3>
-<ul>
-  {% for area in site.areas %} {% if area.country == "USA" and area.type !=
-  "sub" %}
-  <li>
-    <a href="../areas/{{ area.slug }}">{{ area.title }}</a>
-  </li>
-  {% endif %} {% endfor %}
-</ul>
+<h1 class="center">Let&rsquo;s mobilise</h1>
+<!-- We need you. -->
+<!-- Fight for our lives. -->
+<p class="major-info center">We have the solutions to the climate crisis. We have the willpower. <br>We're making the
+  mass
+  movement.</p>
 
-<h3>Australia</h3>
-<ul>
-  {% for area in site.areas %} {% if area.country == "Australia" and area.type
+<section class="directory-wrapper">
+  <div class="directory-intro">
+    <h2 class="center">Find your people</h2>
+    <!-- Start at home -->
+    <!-- Starting at home -->
+    <!-- Start in your area -->
+    <!-- From the ground up -->
+    <!-- From outside your door -->
+    <!-- Show face -->
+    <p class="center">Getting mobilised isn't as scary as it seems. Join a face-to-face community in your area and stand
+      on the shoulder of giants.</p>
+  </div>
+
+  <div class="directory-index">
+    <div class="directory-country">
+      <h5>USA</h5>
+      <ul>
+        {% for area in site.areas %} {% if area.country == "USA" and area.type !=
+  "sub" %}
+        <li>
+          <a href="../areas/{{ area.slug }}">{{ area.title }}</a>
+        </li>
+        {% endif %} {% endfor %}
+      </ul>
+    </div>
+
+    <div class="directory-country">
+      <h5>Australia</h5>
+      <ul>
+        {% for area in site.areas %} {% if area.country == "Australia" and area.type
   != "sub" %}
-  <li>
-    <a href="../areas/{{ area.slug }}">{{ area.title }}</a>
-  </li>
-  {% endif %} {% endfor %}
-</ul>
+        <li>
+          <a href="../areas/{{ area.slug }}">{{ area.title }}</a>
+        </li>
+        {% endif %} {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <div class="directory-footer center">
+    <a class="center" href="mailto:hi@climatelocal.org?subject=I'd like to suggest an area for ClimateLocal">Add your
+      town or city</a>
+  </div>
+</section>
+
+<!-- <section>
+  <h2 class="center">We have the solutions</h2>
+</section>
+<section>
+  <h2 class="center">We have the willpower</h2>
+</section>
+<section>
+  <h2 class="center">ClimateLocal is just the start</h2>
+</section> -->
