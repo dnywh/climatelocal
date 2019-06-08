@@ -1,10 +1,13 @@
 <header>
+  {% include base.html %}
   <div class="logo">
-    <h1>ClimateLocal</h1>
+    <a href="{{ base }}">
+      <h1>ClimateLocal</h1>
+    </a>
   </div>
   <nav>
     <ul>
-      {% include base.html %}
+
       <li><a href="{{ base }}">Home</a></li>
       <li><a href="{{ base }}/about">About</a></li>
     </ul>
