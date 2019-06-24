@@ -71,13 +71,28 @@ local-opportunities:
     cta: See more
 
 events:
+  - title: SAFE Disposal Event
+    start-date: 2019-06-15 10:00:00 -0400
+    end-date: 2019-06-15 17:00:00 -0400
+    recurring: weekly
+    host: NYC Zero Waste
+    type: drop off
+    url: http://nyc.gov/dropspecialwaste
+  - title: Composting With Lovely Red Worms
+    start-date: 2019-06-18 18:00:00 -0400
+    start-date: 2019-06-18 20:00:00 -0400
+    host: Brooklyn Botanic Garden
+    type: workshop
+    url: https://classes.bbg.org/CourseStatus.awp?&course=19SCPCLRA
   - title: World Oceans Week
-    date: 2019-06-03 09:45:00 -0400
-    organiser: The Explorers Club
+    start-date: 2019-06-03 09:45:00 -0400
+    host: The Explorers Club
+    type: festival
     url: https://explorers.org/events/detail/world_oceans_week_2019_monday
   - title: Global Climate Strike
-    date: 2019-09-20 09:00:00 -0400
-    organiser: 350.org
+    start-date: 2019-09-20 09:00:00 -0400
+    host: 350.org
+    type: rally
     url: https://globalclimatestrike.net
   
 ---

@@ -67,9 +67,9 @@ layout: default
 <ul class="events">
   {% for event in page.events %}
   <li>
-    <p>{{ event.date | date_to_long_string: "ordinal" }}</p>
+    <p>{{ event.start-date | date_to_long_string: "ordinal" }}</p>
     <p><strong>{{ event.title }}</strong></p>
-    <p>Organised by {{ event.organiser }}</a> </p>
+    <p>{{ event.type | capitalize }}, {{ event.host }}</a> </p>
     <p><a href="{{ event.url }}" target="_blank">View</a></p>
   </li>
   {% endfor %}
