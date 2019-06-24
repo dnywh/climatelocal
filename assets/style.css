@@ -95,6 +95,10 @@ h5 {
   margin: 0;
 }
 
+.major-info p {
+  max-width: var(--width-card);
+}
+
 p.minor-info {
   color: grey;
   font-size: 0.75em;
@@ -189,3 +193,11 @@ ul.individual-actions {
         max-width: 10em;
         margin-right: var(--padding-item);
       }
+
+  /* People */
+
+  img.hero {
+    border-radius: 100%;
+    width: 12em;
+    height: 12em;
+  }

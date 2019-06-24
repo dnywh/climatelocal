@@ -1,6 +1,9 @@
 ---
 layout: person
 title: Larissa Waters
+id: larissawaters
+first-name: Larissa
+last-name: Waters
 orgs: [the-greens]
 groups: [The Greens Far North Queensland]
 email: senator.waters@aph.gov.au

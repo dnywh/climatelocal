@@ -8,17 +8,21 @@ layout: default
   <div class="major-info">{{ content }}</div>
 
   <p class="minor-info">
-    {% for i in page.contributers %}
-    <a class="avatar" href="{{ site.data.contributers[i].link-url }}" target="_blank">
-      <img src="{{ site.data.contributers[i].image-url }}"
-        alt="Picture for {{ site.data.contributers[i].first-name }} {{ site.data.contributers[i].last-name }}"
-        title="{{ site.data.contributers[i].first-name }} {{ site.data.contributers[i].last-name }}">
+    {% for contributer in page.contributers %}
+    {% for person in site.people %}
+    {% if contributer == person.slug %}
+
+    {% include base.html %}
+    <a class="avatar" href="{{ base }}/people/{{ contributer }}">
+      <img src="{{ person.image-url }}" alt="Picture for {{ person.first-name }} {{ person.last-name }}"
+        title="{{ person.first-name }} {{ person.last-name }}">
     </a>
-    {% endfor %}
 
     Curated by
-    {% for i in page.contributers %}
-    {{ site.data.contributers[i].first-name }}
+    {{ person.first-name }}
+
+    {% endif %}
+    {% endfor %}
     {% endfor %}
   </p>
 </div>
@@ -32,7 +36,7 @@ layout: default
   <li>
     <p><img src="{{ opp.image-url }}" alt="Image for {{ opp.name }}"></p>
     <h4>{{ opp.name }}</h4>
-    <p><small>Drawdown solutions: {{ opp.category }}</small></p>
+    <p><small>{{ opp.category }}</small></p>
     <p>{{ opp.notes }}</p>
     <p>
       <a href="{{ opp.url }}" target="_blank">{{ opp.cta }}</a>

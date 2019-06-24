@@ -3,7 +3,7 @@ layout: area
 title: New York City
 state: New York
 country: USA
-contributers: danny
+contributers: danny-white
 climate-score: 8
 local-groups: 
   - name: 350.org New York City
@@ -69,6 +69,12 @@ local-opportunities:
     image-url: https://static1.squarespace.com/static/559d5c80e4b0ffc53d0e87d5/t/55bbe0a2e4b0a7be0915b20f/1438376110537/IMG_3992.JPG
     notes: We welcome drop-in volunteers to help with COMPOST year-round on Fridays, 9am-12pm and Saturdays, 10:30am-1pm. For FARM volunteering, you can drop in April-November on Saturdays, 10am-1pm. Come dressed for the weather and ready to get dirty.  No RSVP required, just show up and we'll put you to work!
     cta: See more
+  
+  - name: Grow NYC
+    category: Food, Recycling
+    url: https://www.grownyc.org/volunteer
+    image-url: https://www.grownyc.org/files/header_img/about-2016-ban-2_1.jpg
+    notes: GrowNYC has many opportunities for individuals to dig in and improve New York City's environment block by block and community by community. Greenmarket volunteers help with at-market promotions like cooking demonstrations, farmer support, and community outreach; Fresh Food Box distribution; Youthmarket cooking demos and more! Recycling volunteers help keep food waste out of landfills, facilitate community reuse events, conduct interactive recycling demonstrations, and more.
 
 events:
   - title: SAFE Disposal Event
