@@ -1,0 +1,8 @@
+---
+layout: person
+first-name: Lexi
+last-name: Lombari
+image-url: https://pbs.twimg.com/profile_images/980263450227208192/k7nx930Z_400x400.jpg
+link-url: http://dannywhite.studio
+associated-areas: new-york-city
+---

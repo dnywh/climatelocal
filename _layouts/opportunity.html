@@ -20,4 +20,29 @@ layout: default
     {% endfor %}
     {% endfor %}
   </ul>
+
+  {% if page.comments %}
+  <h5>Comments</h5>
+  <ul>
+    {% for comment in page.comments %}
+    <li>
+      <p>{{ comment.content }}</p>
+      <p><strong>{{ comment.author }}</strong></p>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+  {% if page.visitors %}
+  <h5>Who's going or been</h5>
+  <ul>
+    {% for visitor in page.visitors %}
+    <li>
+      <img src="" alt="{{ visitor }}">
+      <p><small>{{ visitor }}</small></p>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
 </div>

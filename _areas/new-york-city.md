@@ -23,6 +23,7 @@ individual-actions:
   - name: Switch to green energy
     investment: 1 week
     notes: Switch from ConEd to a renewable energy provider such as Green Mountain Energy.
+    cta: Make the switch
   - name: Change your bank
     investment: 1 week
     url: https://www.nerdwallet.com/blog/banking/socially-responsible-banks/

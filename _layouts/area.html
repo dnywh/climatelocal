@@ -62,7 +62,7 @@ layout: default
     <h4>{{ action.name }}</h4>
     <p>{{ action.notes }}</p>
     <p>
-      <a href="{{ action.url }}" target="_blank">{{ action.cta }}</a>
+      <a href="{{ action.url }}" target="_blank">{{ action.cta }} →</a>
     </p>
   </li>
   {% endfor %}
@@ -79,7 +79,7 @@ layout: default
     <p>{{ event.start-date | date_to_long_string: "ordinal" }}</p>
     <p><strong>{{ event.title }}</strong></p>
     <p>{{ event.type | capitalize }}, {{ event.host }}</a> </p>
-    <p><a href="{{ event.url }}" target="_blank">View</a></p>
+    <p><a href="{{ event.url }}" target="_blank">View →</a></p>
   </li>
   {% endfor %}
 </ul>
@@ -95,7 +95,7 @@ layout: default
     <p><img src="{{ group.image-url }}" alt="Avatar for {{ group.name }}"></p>
     <h4>{{ group.name }}</h4>
     <p>Part of {{ group.parent }}</p>
-    <p><a href="{{ group.url }}" target="_blank">View</a></p>
+    <p><a href="{{ group.url }}" target="_blank">View →</a></p>
   </li>
   {% endfor %}
 </ul>
