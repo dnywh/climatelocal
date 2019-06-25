@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-
+{% include base.html %}
 <div>
   <img src="{{ page.image-url }}" alt="Image for {{ page.title }}">
   <h1>{{ page.title }}</h1>
@@ -14,7 +14,6 @@ layout: default
     {% for associated-area in page.associated-areas %}
     {% for area in site.areas %}
     {% if associated-area == area.slug %}
-    {% include base.html %}
     <li><a href="{{ base }}/areas/{{ area.slug }}">{{ area.title }}</a></li>
     {% endif %}
     {% endfor %}
@@ -25,10 +24,18 @@ layout: default
   <h5>Comments</h5>
   <ul>
     {% for comment in page.comments %}
+    {% for person in site.people %}
+    {% if comment.author == person.slug %}
     <li>
       <p>{{ comment.content }}</p>
-      <p><strong>{{ comment.author }}</strong></p>
+      <a class="avatar" href="{{ base }}/people/{{ person.slug }}">
+        <img src="{{ person.image-url }}" alt="Picture for {{ person.first-name }} {{ person.last-name }}"
+          title="{{ person.first-name }} {{ person.last-name }}">
+      </a>
+      <p><strong>{{ person.first-name }} {{ person.last-name }}</strong></p>
     </li>
+    {% endif %}
+    {% endfor %}
     {% endfor %}
   </ul>
   {% endif %}
@@ -37,10 +44,16 @@ layout: default
   <h5>Who's going or been</h5>
   <ul>
     {% for visitor in page.visitors %}
+    {% for person in site.people %}
+    {% if visitor == person.slug %}
     <li>
-      <img src="" alt="{{ visitor }}">
-      <p><small>{{ visitor }}</small></p>
+      <a class="avatar" href="{{ base }}/people/{{ person.slug }}">
+        <img src="{{ person.image-url }}" alt="Picture for {{ person.first-name }} {{ person.last-name }}"
+          title="{{ person.first-name }} {{ person.last-name }}">
+      </a>
     </li>
+    {% endif %}
+    {% endfor %}
     {% endfor %}
   </ul>
   {% endif %}
