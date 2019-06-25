@@ -1,7 +1,6 @@
 ---
 layout: default
 ---
-
 <div class="intro">
   <h1>{{ page.title }}</h1>
   <h5>{{ page.state }}, {{ page.country }}</h5>
@@ -31,17 +30,23 @@ layout: default
 <!-- Get involved -->
 <h2>Get involved</h2>
 <p>Local training or volunteering opportunities.</p>
-<ul class="local-opportunities">
-  {% for opp in page.local-opportunities %}
+<ul class="local-opportunities card-container">
+  {% for opp in site.opportunities %}
+  {% for area in opp.associated-areas %}
+  {% if area == page.slug %}
   <li>
-    <p><img src="{{ opp.image-url }}" alt="Image for {{ opp.name }}"></p>
-    <h4>{{ opp.name }}</h4>
+    <p><img src="{{ opp.image-url }}" alt="Image for {{ opp.title }}"></p>
+    <h4>{{ opp.title }}</h4>
     <p><small>{{ opp.category }}</small></p>
     <p>{{ opp.notes }}</p>
     <p>
-      <a href="{{ opp.url }}" target="_blank">{{ opp.cta }}</a>
+      {% include base.html %}
+      <a href="{{ base }}/opportunities/{{ opp.slug }}">Read more</a>
+      <a href="{{ opp.link-url }}" target="_blank">Website →</a>
     </p>
   </li>
+  {% endif %}
+  {% endfor %}
   {% endfor %}
 </ul>
 
@@ -50,7 +55,7 @@ layout: default
 <!-- Individual action -->
 <h2>Make locally relevant changes</h2>
 <p>Take the first steps through individual action.</p>
-<ul class="individual-actions">
+<ul class="individual-actions card-container">
   {% for action in page.individual-actions %}
   <li>
     <p class="minor-info">Requires about {{ action.investment }}</p>
@@ -68,7 +73,7 @@ layout: default
 <!-- Events -->
 <h2>Mobilise</h2>
 <p>Upcoming marches, rallys, and other events.</p>
-<ul class="events">
+<ul class="events card-container">
   {% for event in page.events %}
   <li>
     <p>{{ event.start-date | date_to_long_string: "ordinal" }}</p>
@@ -84,7 +89,7 @@ layout: default
 <!-- Groups -->
 <h2>Find your people</h2>
 <p>Chapter and branch groups within this area.</p>
-<ul class="local-groups">
+<ul class="local-groups card-container">
   {% for group in page.local-groups %}
   <li>
     <p><img src="{{ group.image-url }}" alt="Avatar for {{ group.name }}"></p>

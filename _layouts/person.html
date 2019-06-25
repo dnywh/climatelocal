@@ -2,12 +2,18 @@
 layout: default
 ---
 
-<div class="center">
-  <img class="hero" src="{{ page.image-url }}" alt="{{ page.title }}" />
-  <h2>{{ page.title }}</h2>
-  <h4>
-    Website: <a href="{{ page.website }}">{{ page.website }}</a>
-  </h4>
+<div>
+  <div class="center">
+    <img class="hero" src="{{ page.image-url }}" alt="{{ page.title }}" />
+    <h2>{{ page.title }}</h2>
+    {% if page.link-url %}
+    <p>
+      <a href="{{ page.link-url }}" target="_blank">Website →</a>
+    </p>
+    {% endif %}
+  </div>
+
+
 
   {% if page.email %}
   <h4>Email</h4>
@@ -16,6 +22,7 @@ layout: default
   </p>
   {% endif %}
 
+  {% if page.associated-orgs %}
   <h5>Orgs</h5>
   <ul>
     {% for org in page.orgs %}
@@ -24,4 +31,33 @@ layout: default
     </li>
     {% endfor %}
   </ul>
+  {% endif %}
+
+  {% if page.associated-areas %}
+  <h5>Areas</h5>
+  <ul>
+    {% for associated-area in page.associated-areas %}
+    {% for area in site.areas %}
+    {% if associated-area == area.slug %}
+    {% include base.html %}
+    <li><a href="{{ base }}/areas/{{ area.slug }}">{{ area.title }}</a></li>
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+  {% if page.recommendations %}
+  <h5>Recommendations</h5>
+  <ul class="card-container recommendations">
+    {% for recommendation in page.recommendations %}
+    <li>
+      <img src="{{ recommendation.image-url}}" alt="{{ recommendation.title }}">
+      <p><strong>{{ recommendation.title }}</strong></h4>
+        <p>{{ recommendation.commentary }}</p>
+        <a href="{{ recommendation.link-url}}" target="_blank">View {{ recommendation.type }} →</a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
 </div>
