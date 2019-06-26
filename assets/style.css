@@ -12,7 +12,7 @@
 
 body {
   font-family: var(--type-sans);
-  background-color: var(--colour-grey-100);
+  /* background-color: var(--colour-grey-100); */
 }
 
 hr {
@@ -113,7 +113,8 @@ h5 {
   max-width: var(--width-card);
 }
 
-p.minor-info {
+p.minor-info,
+small.minor-info {
   color: grey;
   font-size: 0.75em;
 }
@@ -188,18 +189,28 @@ ul.card-container {
     .horizontal-scroll {
       display: flex;
       overflow-x: auto;
+      overflow-y: hidden;
       flex-wrap: nowrap;
+      height: 24em;
+      align-items: flex-start;
       -webkit-overflow-scrolling: touch;
       -ms-overflow-style: -ms-autohiding-scrollbar;
+      background: var(--colour-grey-100);
+      padding: 4em 0 4em 0;
     }
 
     ul.horizontal-scroll li {
       margin-right: 2em;
+      height: 100%;
       flex: 0 0 auto;
-      /* border: 1px solid lightgrey; */
       background: white;
-      border-radius: 0.25em;
+      border-radius: 0.4em;
+      overflow: hidden;
     }
+    ul.horizontal-scroll li:hover {
+      box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, .04);
+    }
+
       ul.horizontal-scroll li:first-of-type {
         margin-left: 1em;
       }
@@ -210,6 +221,8 @@ ul.card-container {
         object-fit: cover;
         margin-bottom: 1em;
       }
+
+      
 
 
     ul.local-opportunities > li {

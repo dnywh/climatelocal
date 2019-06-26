@@ -31,12 +31,12 @@ layout: default
 <div class="container">
   <h2>Get involved</h2>
   <p>Local training or volunteering opportunities.</p>
+  <p>Filter: Girls Education • Food • Recyling • Buildings and Cities</p>
 </div>
 <ul class="local-opportunities card-container horizontal-scroll">
   {% for opp in site.opportunities %}
   {% for area in opp.associated-areas %}
   {% if area == page.slug %}
-
   <li>
     {% include base.html %}
     <a href="{{ base }}/opportunities/{{ opp.slug }}">
@@ -49,7 +49,7 @@ layout: default
         </a>
       </h4>
 
-      <p><small>{{ opp.category }}</small></p>
+      <small class="minor-info">{{ opp.category }}</small>
       <p>{{ opp.notes }}</p>
       <p>
         <a href="{{ base }}/opportunities/{{ opp.slug }}">Read more</a>
