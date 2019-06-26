@@ -1,18 +1,52 @@
 :root {
   /* Sizing */
+  --padding-margin: 1em;
   --padding-item: 4em;
-  --width-card: 18em;
-  --width-card-small: 24em;
+  --width-card-small: 18em;
+  --width-card-medium: 24em;
+  --radius-border: 0.4em;
+  /* Color */
   --colour-grey-100: rgb(250, 250, 250);
+  --colour-grey-200: rgb(240, 240, 240);
   --colour-grey-300: #e5e5e5;
   --color-black-900: rgb(10, 10, 10);
+  /* Type */
   --type-serif: Georgia, 'Times New Roman', Times, serif;
   --type-sans:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
+@media (min-width: 768px) {
+  :root {
+    --padding-margin: 2em;
+  }
+ }
+
+ /* General classes */
+
+.container {
+  margin-left: var(--padding-margin);
+  margin-right: var(--padding-margin);
+}
+
+.flex {
+  display: flex;
+}
+
+.block {
+  display: block;
+}
+
+.card {
+  text-decoration: none;
+}
+
+.plain-ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
 body {
   font-family: var(--type-sans);
-  /* background-color: var(--colour-grey-100); */
 }
 
 hr {
@@ -27,11 +61,6 @@ h1, h2, h3, h4, h5 {
   letter-spacing: -0.03em;
 }
 
-.container {
-  margin-left: 1em;
-  margin-right: 1em;
-   
-}
 
 
 header,
@@ -109,10 +138,6 @@ h5 {
   margin: 0;
 }
 
-.major-info p {
-  max-width: var(--width-card);
-}
-
 p.minor-info,
 small.minor-info {
   color: grey;
@@ -124,20 +149,22 @@ img {
   max-width: 100%;
 }
 
-/* Home */
-section.directory-wrapper {
-  margin-top: 4em;
+section {
+  margin: 4em 0;
 }
 
+/* Home */
+
+
 div.directory-intro {
-  max-width: var(--width-card);
+  max-width: var(--width-card-medium);
   margin: 0 auto 2em;
 }
 
 div.directory-index {
   display: flex;
   justify-content: space-between;
-  max-width: 25em;
+  max-width: var(--width-card-medium);
   margin: 0 auto;
 }
 
@@ -161,12 +188,6 @@ div.intro {
     border-radius: 100%;
   }
 
-header ul,
-footer ul,
-ul.card-container {
-  padding-left: 0;
-  list-style-type: none;
-}
 /* events */
   ul.events > li {
     display: flex;
@@ -186,57 +207,55 @@ ul.card-container {
     }
   
     /* local-opportunities */
-    .horizontal-scroll {
+    .local-opportunities {
       display: flex;
       overflow-x: auto;
       overflow-y: hidden;
       flex-wrap: nowrap;
       height: 24em;
+
       align-items: flex-start;
       -webkit-overflow-scrolling: touch;
       -ms-overflow-style: -ms-autohiding-scrollbar;
-      background: var(--colour-grey-100);
-      padding: 4em 0 4em 0;
     }
 
-    ul.horizontal-scroll li {
+    .local-opportunities .card {
       margin-right: 2em;
+      width: var(--width-card-small);
       height: 100%;
       flex: 0 0 auto;
-      background: white;
-      border-radius: 0.4em;
       overflow: hidden;
-    }
-    ul.horizontal-scroll li:hover {
-      box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, .04);
+      /* display: flex; */
+      background: var(--colour-grey-200);
+      border-radius: var(--radius-border);
+      /* flex-direction: column; */
+      /* justify-content: flex-start; */
     }
 
-      ul.horizontal-scroll li:first-of-type {
-        margin-left: 1em;
+      .local-opportunities .card:first-of-type {
+        margin-left: var(--padding-margin);
       }
     
-      ul.horizontal-scroll li img {
+      .local-opportunities .card img {
         width: 100%;
-        height: 10em;
+        height: 12em;
         object-fit: cover;
         margin-bottom: 1em;
       }
 
-      
+      .local-opportunities .card h4 {
+        margin-bottom: 0.4em;
+      }
+
+      .local-opportunities .card a.button {
+        margin-top: 2em;
+      }
 
 
-    ul.local-opportunities > li {
-      width: var(--width-card);
-      margin-bottom: var(--padding-item);
-    }
-
-    ul.local-opportunities > li > img {
-      /* max-width: var(--width-card); */
-    }
 
     /* individual-actions */
     ul.individual-actions > li {
-      max-width: var(--width-card);
+      max-width: var(--width-card-small);
       margin-bottom: var(--padding-item);
     }
 
@@ -247,6 +266,10 @@ ul.card-container {
       ul.local-groups > li {
         max-width: 10em;
         margin-right: var(--padding-item);
+      }
+
+      ul.local-groups > li img {
+        border-radius: 100%;
       }
 
   /* People */

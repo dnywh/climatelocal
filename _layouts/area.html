@@ -28,47 +28,46 @@ layout: default
 
 
 <!-- Get involved -->
-<div class="container">
-  <h2>Get involved</h2>
-  <p>Local training or volunteering opportunities.</p>
-  <p>Filter: Girls Education • Food • Recyling • Buildings and Cities</p>
-</div>
-<ul class="local-opportunities card-container horizontal-scroll">
-  {% for opp in site.opportunities %}
-  {% for area in opp.associated-areas %}
-  {% if area == page.slug %}
-  <li>
+<section>
+  <div class="container">
+    <h2>Get involved</h2>
+    <p>Local training or volunteering opportunities.</p>
+    <p>Filter: Girls Education • Food • Recyling • Buildings and Cities</p>
+  </div>
+  <ul class="local-opportunities plain-ul">
+    {% for opp in site.opportunities %}
+    {% for area in opp.associated-areas %}
+    {% if area == page.slug %}
+
     {% include base.html %}
-    <a href="{{ base }}/opportunities/{{ opp.slug }}">
-      <img src="{{ opp.image-url }}" alt="Image for {{ opp.title }}">
+    <a class="card" href="{{ base }}/opportunities/{{ opp.slug }}">
+      <li>
+        <img src="{{ opp.image-url }}" alt="Image for {{ opp.title }}">
+        <div class="container">
+          <h4>
+            {{ opp.title }}
+          </h4>
+          <small class="minor-info">{{ opp.category }}</small>
+
+          <!-- <a class="button block" href="{{ base }}/opportunities/{{ opp.slug }}">Read more</a> -->
+        </div>
+
+      </li>
     </a>
-    <div class="container">
-      <h4>
-        <a href="{{ base }}/opportunities/{{ opp.slug }}">
-          {{ opp.title }}
-        </a>
-      </h4>
 
-      <small class="minor-info">{{ opp.category }}</small>
-      <p>{{ opp.notes }}</p>
-      <p>
-        <a href="{{ base }}/opportunities/{{ opp.slug }}">Read more</a>
-      </p>
-    </div>
-  </li>
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+  </ul>
+</section>
 
-  {% endif %}
-  {% endfor %}
-  {% endfor %}
-</ul>
 
-<hr>
 
 <!-- Individual action -->
-<div class="container">
+<section class="container">
   <h2>Make locally relevant changes</h2>
   <p>Take the first steps through individual action.</p>
-  <ul class="individual-actions card-container">
+  <ul class="individual-actions plain-ul">
     {% for action in page.individual-actions %}
     <li>
       <p class="minor-info">Requires about {{ action.investment }}</p>
@@ -80,12 +79,12 @@ layout: default
     </li>
     {% endfor %}
   </ul>
-</div>
+</section>
 
-<hr>
+
 
 <!-- Events -->
-<div class="container">
+<section class="container">
   <h2>Mobilise</h2>
   <p>Upcoming marches, rallys, and other events.</p>
   <ul class="events card-container">
@@ -98,22 +97,22 @@ layout: default
     </li>
     {% endfor %}
   </ul>
-</div>
+</section>
 
-<hr>
+
 
 <!-- Groups -->
-<div class="container">
+<section class="container">
   <h2>Find your people</h2>
   <p>Chapter and branch groups within this area.</p>
-  <ul class="local-groups card-container">
+  <ul class="local-groups plain-ul">
     {% for group in page.local-groups %}
     <li>
-      <p><img src="{{ group.image-url }}" alt="Avatar for {{ group.name }}"></p>
+      <img src="{{ group.image-url }}" alt="Avatar for {{ group.name }}">
       <h4>{{ group.name }}</h4>
       <p>Part of {{ group.parent }}</p>
       <p><a href="{{ group.url }}" target="_blank">View →</a></p>
     </li>
     {% endfor %}
   </ul>
-</div>
+</section>
