@@ -1,31 +1,36 @@
 :root {
   /* Sizing */
   --padding-item: 4em;
-  --width-card: 40em;
+  --width-card: 18em;
   --width-card-small: 24em;
-  --colour-grey-light: #e5e5e5;
+  --colour-grey-100: rgb(250, 250, 250);
+  --colour-grey-300: #e5e5e5;
+  --color-black-900: rgb(10, 10, 10);
   --type-serif: Georgia, 'Times New Roman', Times, serif;
   --type-sans:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: var(--type-sans);
+  background-color: var(--colour-grey-100);
 }
 
 hr {
   border: none;
-  background-color: var(--colour-grey-light);
+  background-color: var(--colour-grey-300);
   height: 1px;
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: var(--type-serif);
+  font-family: var(--type-sans);
   font-weight: 900;
   letter-spacing: -0.03em;
 }
 
-main {
-  margin: 1em;
+.container {
+  margin-left: 1em;
+  margin-right: 1em;
+   
 }
 
 
@@ -83,6 +88,14 @@ h4 {
   font-weight: 800;
   margin: 0;
 }
+  h4 a {
+    text-decoration: none;
+    color: var(--color-black-900);
+  }
+  h4:hover {
+    color: blue;
+  }
+  
 
 /* Used for state and country */
 h5 {
@@ -172,9 +185,40 @@ ul.card-container {
     }
   
     /* local-opportunities */
+    .horizontal-scroll {
+      display: flex;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      -webkit-overflow-scrolling: touch;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+    }
+
+    ul.horizontal-scroll li {
+      margin-right: 2em;
+      flex: 0 0 auto;
+      /* border: 1px solid lightgrey; */
+      background: white;
+      border-radius: 0.25em;
+    }
+      ul.horizontal-scroll li:first-of-type {
+        margin-left: 1em;
+      }
+    
+      ul.horizontal-scroll li img {
+        width: 100%;
+        height: 10em;
+        object-fit: cover;
+        margin-bottom: 1em;
+      }
+
+
     ul.local-opportunities > li {
-      max-width: var(--width-card);
+      width: var(--width-card);
       margin-bottom: var(--padding-item);
+    }
+
+    ul.local-opportunities > li > img {
+      /* max-width: var(--width-card); */
     }
 
     /* individual-actions */
