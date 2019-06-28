@@ -2,60 +2,127 @@
 layout: default
 ---
 {% include base.html %}
-<div>
-  <img src="{{ page.image-url }}" alt="Image for {{ page.title }}">
-  <h1>{{ page.title }}</h1>
-  <p><small>{{ page.category }}</small></p>
-  <p>{{ page.notes }}</p>
-  <a href="{{ page.link-url }}" target="_blank">Website →</a>
 
-  <h5>Areas</h5>
-  <ul>
-    {% for associated-area in page.associated-areas %}
-    {% for area in site.areas %}
-    {% if associated-area == area.slug %}
-    <li><a href="{{ base }}/areas/{{ area.slug }}">{{ area.title }}</a></li>
+<!-- Top -->
+<section class="flex container">
+  <!-- Intro -->
+  <div class="grid-item">
+    <h1>{{ page.title }}</h1>
+    <p>Part of the
+      {% for associated-area in page.associated-areas %}
+      {% for area in site.areas %}
+      {% if associated-area == area.slug %}
+      <a href="{{ base }}/areas/{{ area.slug }}">{{ area.title }}</a>
+      {% endif %}
+      {% endfor %}
+      {% endfor %}
+      area guide.
+    </p>
+
+    <!-- Address -->
+    {% if page.address-line-1 %}
+    <p>{{ page.address-line-1 }}
+      {% if page.address-line-2 %}
+      <br>{{ page.address-line-2 }}
+      {% endif %}
+    </p>
+    <p><a href="{{ page.address-url }}" target="_blank">View map →</a></p>
     {% endif %}
-    {% endfor %}
-    {% endfor %}
-  </ul>
 
+    <!-- Tags -->
+    <ul class="plain-ul tags">
+      {% for associated-tag in page.associated-tags %}
+      {% for tag in site.tags %}
+      {% if associated-tag == tag.name %}
+      <li>
+        <div>{{ tag.icon }}</div>
+        {{ tag.name }}
+      </li>
+      {% endif %}
+      {% endfor %}
+      {% endfor %}
+    </ul>
+  </div>
+
+  <!-- Outbound links -->
+  <div class="grid-item">
+    <a class="visit" href="{{ page.link-url }}">Visit →</a>
+    <a href="mailto:{{ page.email }}">Email</a>
+
+    <ul class="plain-ul social">
+      {% for item in page.social %}
+      <a href="{{ item.url }}" target="_blank">
+        <li>
+          <img src="https://ik.imagekit.io/dw/cl/{{ item.type }}.png"
+            alt="{{ page.title }} on {{ item.type | capitalize }}">
+        </li>
+      </a>
+      {% endfor %}
+    </ul>
+
+    <!-- Visitors -->
+    {% if page.visitors %}
+    <h5>Who's been</h5>
+    <ul class="plain-ul facepile">
+      {% for visitor in page.visitors %}
+      {% for person in site.people %}
+      {% if visitor == person.slug %}
+      <li>
+        <a class="avatar" href="{{ base }}/people/{{ person.slug }}">
+          <img src="{{ person.image-url }}" alt="Picture for {{ person.first-name }} {{ person.last-name }}"
+            title="{{ person.first-name }} {{ person.last-name }}">
+        </a>
+      </li>
+      {% endif %}
+      {% endfor %}
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</section>
+
+
+
+<!-- Photos -->
+<section>
+  <div class="container">
+    <h5>How it looks</h5>
+  </div>
+  <div class="photos">
+    {% for photo in page.photos %}
+    <img src="{{ photo }}" alt="An image of {{ page.title }}">
+    {% endfor %}
+  </div>
+</section>
+
+
+<!-- Info -->
+<section class="container">
+  <h5>What to know</h5>
+  <p>{{ page.info }}</p>
+</section>
+
+<!-- Comments -->
+<section class="container">
   {% if page.comments %}
-  <h5>Comments</h5>
-  <ul>
+  <h5>What people say</h5>
+  <ul class="plain-ul comments">
     {% for comment in page.comments %}
     {% for person in site.people %}
     {% if comment.author == person.slug %}
     <li>
+      <a class="avatar" href="{{ base }}/people/{{ person.slug }}">
+        <img src="{{ person.image-url }}" alt="Picture for {{ person.first-name }} {{ person.last-name }}"
+          title="{{ person.first-name }} {{ person.last-name }}">
+      </a>
+      <span><strong>{{ person.first-name }} {{ person.last-name }}</strong> on
+        {{ comment.date | date: "%d %B"  }}</span>
+      <div class="arrow-up"></div>
       <p>{{ comment.content }}</p>
-      <a class="avatar" href="{{ base }}/people/{{ person.slug }}">
-        <img src="{{ person.image-url }}" alt="Picture for {{ person.first-name }} {{ person.last-name }}"
-          title="{{ person.first-name }} {{ person.last-name }}">
-      </a>
-      <p><strong>{{ person.first-name }} {{ person.last-name }}</strong></p>
     </li>
     {% endif %}
     {% endfor %}
     {% endfor %}
   </ul>
   {% endif %}
-
-  {% if page.visitors %}
-  <h5>Who's going or been</h5>
-  <ul>
-    {% for visitor in page.visitors %}
-    {% for person in site.people %}
-    {% if visitor == person.slug %}
-    <li>
-      <a class="avatar" href="{{ base }}/people/{{ person.slug }}">
-        <img src="{{ person.image-url }}" alt="Picture for {{ person.first-name }} {{ person.last-name }}"
-          title="{{ person.first-name }} {{ person.last-name }}">
-      </a>
-    </li>
-    {% endif %}
-    {% endfor %}
-    {% endfor %}
-  </ul>
-  {% endif %}
-
-</div>
+</section>
