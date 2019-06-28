@@ -1,11 +1,13 @@
 :root {
   /* Sizing */
-  --padding-dynamic: 10vw;
+  --padding-dynamic-inner: 4vw;
+  --padding-dynamic-outer: 1vw;
   --padding-margin: 1em;
   --padding-section: 2em;
   --padding-item: 4em;
   --width-card-small: 18em;
   --width-card-medium: 24em;
+  --width-text-legible: 28em;
   --radius-border: 0.4em;
   /* Color */
   --colour-grey-100: rgb(250, 250, 250);
@@ -17,19 +19,39 @@
   --type-sans:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-@media (min-width: 768px) {
+/* Small width */
+@media (min-width: 960px) {
   :root {
     --padding-margin: 2em;
+    --padding-dynamic-inner: 10vw;
+    --padding-dynamic-outer: 2vw;
+  }
+ }
+ /* Medium width */
+ @media (min-width: 1366px) {
+  :root {
+    --padding-dynamic-inner: 18vw;
+  }
+ }
+ /* Large width */
+ @media (min-width: 1720px) {
+  :root {
+    --padding-dynamic-inner: 24vw;
+    --padding-dynamic-outer: 4vw;
   }
  }
 
  /* General classes */
 
-.container {
-  margin-left: var(--padding-dynamic);
-  margin-right: var(--padding-dynamic);
+.container-inner {
+  margin-left: var(--padding-dynamic-inner);
+  margin-right: var(--padding-dynamic-inner);
 }
-.card-container {
+.container-outer {
+  margin-left: var(--padding-dynamic-outer);
+  margin-right: var(--padding-dynamic-outer);
+}
+.container-card {
   margin-left: var(--padding-margin);
   margin-right: var(--padding-margin);
 }
@@ -53,6 +75,10 @@
 .plain-ul {
   padding-left: 0;
   list-style-type: none;
+}
+
+p.legible {
+  max-width: var(--width-text-legible);
 }
 
 body {
@@ -346,6 +372,12 @@ ul.tags div {
   text-align: center;
 }
 
+ul.comments {
+  display: grid;
+  grid-column-gap: var(--padding-margin);
+  grid-template-columns: repeat(auto-fit, minmax(var(--width-card-small), max-content));
+}
+
 ul.comments li {
   margin-bottom: var(--padding-section);
 }
@@ -369,8 +401,8 @@ ul.comments li p {
 
 div.photos {
   display: grid;
-  /* grid-gap: 1em; */
-  grid-template-columns: 50% 50%;
+  grid-gap: 1em;
+  grid-template-columns: repeat(2, 1fr);
   /* height: 20em; */
 }
 

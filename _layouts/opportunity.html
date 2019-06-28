@@ -4,7 +4,7 @@ layout: default
 {% include base.html %}
 
 <!-- Top -->
-<section class="flex container">
+<section class="flex container-inner">
   <!-- Intro -->
   <div class="grid-item">
     <h1>{{ page.title }}</h1>
@@ -85,10 +85,10 @@ layout: default
 
 <!-- Photos -->
 <section>
-  <div class="container">
+  <div class="container-inner">
     <h5>How it looks</h5>
   </div>
-  <div class="photos">
+  <div class="photos container-outer">
     {% for photo in page.photos %}
     <img src="{{ photo }}" alt="An image of {{ page.title }}">
     {% endfor %}
@@ -97,13 +97,13 @@ layout: default
 
 
 <!-- Info -->
-<section class="container">
+<section class="container-inner">
   <h5>What to know</h5>
-  <p>{{ page.info }}</p>
+  <p class="legible">{{ page.info }}</p>
 </section>
 
 <!-- Comments -->
-<section class="container">
+<section class="container-inner">
   {% if page.comments %}
   <h5>What people say</h5>
   <ul class="plain-ul comments">
