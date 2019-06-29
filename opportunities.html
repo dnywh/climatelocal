@@ -1,0 +1,12 @@
+---
+layout: page
+title: Opportunities
+---
+
+<ul>
+  {% for opportunity in site.opportunities %}
+  <li>
+    <a href="{{ site.url }}/opportunities/{{ opportunity.slug }}">{{ opportunity.title }}</a>
+  </li>
+  {% endfor %}
+</ul>
