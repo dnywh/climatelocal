@@ -9,10 +9,10 @@ layout: default
   <img src="{{ photo }}" alt="An image of {{ page.title }}">
   {% endfor %}
 </div>
-<section class="flex container-inner">
+<section class="grid-3-col container-inner">
   <!-- Left Rail -->
   <!-- Intro -->
-  <div class="grid-item">
+  <div class="grid-3-col--item-1">
     <section>
       {% for associated-area in page.associated-areas %}
       {% for area in site.areas %}
@@ -34,7 +34,9 @@ layout: default
       <p><a href="{{ page.address-url }}" target="_blank">View map →</a></p>
       {% endif %}
     </section>
+  </div>
 
+  <div class="grid-3-col--item-3">
     <!-- Info -->
     <section>
       <h5>What to know</h5>
@@ -64,15 +66,20 @@ layout: default
 
   <!-- Right Rail -->
   <!-- Outbound links -->
-  <div class="grid-item">
+  <div class="grid-3-col--item-2">
     <section>
       <a class="circle-button" href="{{ page.link-url }}">Visit →</a>
     </section>
+  </div>
+  <div class="grid-3-col--item-4">
     <section>
       <h5>Contact</h5>
-      <a class="filled-button" href="mailto:{{ page.email }}">Email</a>
-
       <ul class="plain-ul social">
+        <a href="mailto:{{ page.email }}">
+          <li>
+            <img src="https://ik.imagekit.io/dw/cl/mail.png" alt="Email {{ page.title }}">
+          </li>
+        </a>
         {% for item in page.social %}
         <a href="{{ item.url }}" target="_blank">
           <li>
@@ -115,7 +122,7 @@ layout: default
 <section class="container-inner">
   {% if page.comments %}
   <h5>What people say</h5>
-  <ul class="plain-ul comments">
+  <ul class="plain-ul grid-3-col comments">
     {% for comment in page.comments %}
     {% for person in site.people %}
     {% if comment.author == person.slug %}
