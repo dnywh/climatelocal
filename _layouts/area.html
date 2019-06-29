@@ -4,6 +4,7 @@ layout: default
 <div class="intro container-inner">
   <h1>{{ page.title }}</h1>
   <h5>{{ page.state }}, {{ page.country }}</h5>
+
   <div class="major-info">{{ content }}</div>
 
   <p class="minor-info">
@@ -11,8 +12,7 @@ layout: default
     {% for person in site.people %}
     {% if contributer == person.slug %}
 
-    {% include base.html %}
-    <a class="avatar" href="{{ base }}/people/{{ contributer }}">
+    <a class="avatar" href="{{ site.url }}/people/{{ contributer }}">
       <img src="{{ person.image-url }}" alt="Picture for {{ person.first-name }} {{ person.last-name }}"
         title="{{ person.first-name }} {{ person.last-name }}">
     </a>
@@ -28,33 +28,31 @@ layout: default
 
 
 <!-- Get involved -->
-<section id="opportunities">
-  <div class="container-inner">
-    <h2>Get involved</h2>
-    <p>Local training or volunteering opportunities.</p>
-    <p>Filter: Girls Education • Food • Recyling • Buildings and Cities</p>
-  </div>
+<section id="opportunities" class="container-inner">
+  <h2>Get involved</h2>
+  <p>Local training or volunteering opportunities.</p>
+  <p>Filter: Girls Education • Food • Recyling • Buildings and Cities</p>
+
   <ul class="local-opportunities plain-ul">
     {% for opp in site.opportunities %}
     {% for area in opp.associated-areas %}
     {% if area == page.slug %}
-
-    {% include base.html %}
-    <a class="card" href="{{ base }}/opportunities/{{ opp.slug }}">
-      <li>
-        <img src="{{ opp.image-url }}" alt="Image for {{ opp.title }}">
+    <a href="{{ site.url }}/opportunities/{{ opp.slug }}">
+      <li
+        style="background: linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.5) ), url({{ opp.image-url }}) no-repeat center center">
+        <!-- <img src="{{ opp.image-url }}" alt="Image for {{ opp.title }}"> -->
         <div class="container-card">
           <h4>
-            {{ opp.title }}
+            {% if opp.cta %}
+            {{ opp.cta }}
+            {% else %}
+            Help out at
+            {% endif %}
           </h4>
-          <small class="minor-info">{{ opp.category }}</small>
-
-          <!-- <a class="button block" href="{{ base }}/opportunities/{{ opp.slug }}">Read more</a> -->
+          <h3>{{ opp.title }}</h3>
         </div>
-
       </li>
     </a>
-
     {% endif %}
     {% endfor %}
     {% endfor %}
@@ -69,13 +67,12 @@ layout: default
   <p>Take the first steps through individual action.</p>
   <ul class="individual-actions plain-ul">
     {% for action in page.individual-actions %}
-    <li>
-      <p class="minor-info">Requires about {{ action.investment }}</p>
-      <h4>{{ action.name }}</h4>
-      <p>{{ action.notes }}</p>
-      <p>
-        <a href="{{ action.url }}" target="_blank">{{ action.cta }} →</a>
-      </p>
+    <li class="container-card">
+      <h3 class="number-bullet">{{ forloop.index }}</h3>
+      <h3>{{ action.name }}</h3>
+      <p>Requires about {{ action.investment }}</p>
+      <!-- <p>{{ action.notes }}</p> -->
+      <a class="outline-button" href="{{ action.url }}" target="_blank">View</a>
     </li>
     {% endfor %}
   </ul>

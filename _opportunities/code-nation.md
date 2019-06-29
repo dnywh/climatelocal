@@ -1,5 +1,6 @@
 ---
 layout: opportunity
+cta: Teach code at
 title: CodeNation
 associated-areas: new-york-city
 category: Women and Girls; Educating Girls

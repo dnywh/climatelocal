@@ -22,6 +22,7 @@ individual-actions:
     notes: New Yorkers get more than 2 billion pieces of unwanted mail a year. You can take a simple step to stop the hundreds of pieces of unwanted catalogs and other mail cluttering your mailbox.
   - name: Switch to green energy
     investment: 1 week
+    url: "#"
     notes: Switch from ConEd to a renewable energy provider such as Green Mountain Energy.
     cta: Make the switch
   - name: Change your bank

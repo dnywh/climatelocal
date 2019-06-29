@@ -1,17 +1,18 @@
 ---
-layout: page
+layout: default
 title: Areas
 ---
-
-<h4>
-  Physical towns, districts, or parts of a country where it is possible for
-  locals to meet centrally.
-</h4>
-
-<ul>
-  {% for area in site.areas %}
-  <li>
-    <a href="{{ area.slug }}">{{ area.title }}</a>
-  </li>
-  {% endfor %}
-</ul>
+<section class="container-inner">
+  <h1>{{ page.title }}</h1>
+  <p>Towns, districts, or parts of a country where it is possible for
+    locals to meet centrally.</p>
+</section>
+<section class="container-inner">
+  <ul>
+    {% for area in site.areas %}
+    <li>
+      <a href="{{ area.slug }}">{{ area.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>

@@ -1,5 +1,6 @@
 ---
 layout: opportunity
+cta: Plant oysterbeds at
 title: Billion Oyster Project
 associated-areas: new-york-city
 category: Marine Permaculture, Ocean Farming / Flood mitigation

@@ -39,8 +39,7 @@ layout: default
     {% for associated-area in page.associated-areas %}
     {% for area in site.areas %}
     {% if associated-area == area.slug %}
-    {% include base.html %}
-    <li><a href="{{ base }}/areas/{{ area.slug }}">{{ area.title }}</a></li>
+    <li><a href="{{ site.url }}/areas/{{ area.slug }}">{{ area.title }}</a></li>
     {% endif %}
     {% endfor %}
     {% endfor %}

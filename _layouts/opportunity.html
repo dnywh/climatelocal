@@ -1,8 +1,6 @@
 ---
 layout: default
 ---
-{% include base.html %}
-
 <!-- Top -->
 <div class="photos container-outer">
   {% for photo in page.photos %}
@@ -17,8 +15,8 @@ layout: default
       {% for associated-area in page.associated-areas %}
       {% for area in site.areas %}
       {% if associated-area == area.slug %}
-      <p><a href="{{ base }}/areas/{{ area.slug }}">{{ area.title }}</a> <span>/</span> <a
-          href="{{ base }}/areas/{{ area.slug }}#opportunities">Opportunities</a></p>
+      <p><a href="{{ site.url }}/areas/{{ area.slug }}">{{ area.title }}</a> <span>/</span> <a
+          href="{{ site.url }}/areas/{{ area.slug }}#opportunities">Opportunities</a></p>
       {% endif %}
       {% endfor %}
       {% endfor %}
@@ -39,13 +37,13 @@ layout: default
   <div class="grid-3-col--item-3">
     <!-- Info -->
     <section>
-      <h5>What to know</h5>
-      <p class="legible">{{ page.info }}</p>
+      <h2>What to know</h2>
+      <div class="major-info">{{ content }}</div>
     </section>
 
     <!-- Tags -->
     <section>
-      <h5>Impact areas</h5>
+      <h2>Impact areas</h2>
       <ul class="plain-ul tags">
         {% for associated-tag in page.associated-tags %}
         {% for tag in site.tags %}
@@ -73,7 +71,7 @@ layout: default
   </div>
   <div class="grid-3-col--item-4">
     <section>
-      <h5>Contact</h5>
+      <h2>Contact</h2>
       <ul class="plain-ul social">
         <a href="mailto:{{ page.email }}">
           <li>
@@ -94,13 +92,13 @@ layout: default
     <!-- Visitors -->
     {% if page.visitors %}
     <section>
-      <h5>Who's been</h5>
+      <h2>Who's been</h2>
       <ul class="plain-ul facepile">
         {% for visitor in page.visitors %}
         {% for person in site.people %}
         {% if visitor == person.slug %}
         <li>
-          <a class="avatar" href="{{ base }}/people/{{ person.slug }}">
+          <a class="avatar" href="{{ site.url }}/people/{{ person.slug }}">
             <img src="{{ person.image-url }}" alt="Picture for {{ person.first-name }} {{ person.last-name }}"
               title="{{ person.first-name }} {{ person.last-name }}">
           </a>
@@ -121,13 +119,13 @@ layout: default
 <!-- Comments -->
 <section class="container-inner">
   {% if page.comments %}
-  <h5>What people say</h5>
+  <h2>What people say</h2>
   <ul class="plain-ul grid-3-col comments">
     {% for comment in page.comments %}
     {% for person in site.people %}
     {% if comment.author == person.slug %}
     <li>
-      <a class="avatar" href="{{ base }}/people/{{ person.slug }}">
+      <a class="avatar" href="{{ site.url }}/people/{{ person.slug }}">
         <img src="{{ person.image-url }}" alt="Picture for {{ person.first-name }} {{ person.last-name }}"
           title="{{ person.first-name }} {{ person.last-name }}">
       </a>
@@ -144,7 +142,7 @@ layout: default
 </section>
 
 <section class="container-inner">
-  <h5 class="center">Ready to try {{ page.title }}?</h5>
+  <h2 class="center">Ready to try {{ page.title }}?</h2>
   <div class="container-inner">
     <a class="filled-button primary" href="{{ page.link-url }}">Visit site →</a>
   </div>
