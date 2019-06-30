@@ -1,7 +1,7 @@
 :root {
   /* Sizing */
+  --padding-dynamic-gutter: 4vw;
   --padding-dynamic-inner: 4vw;
-  --padding-dynamic-outer: 1vw;
   --padding-small: 1em;
   --padding-medium: 2em;
   --padding-large: 4em;
@@ -26,7 +26,7 @@
   :root {
     --padding-small: 2em;
     --padding-dynamic-inner: 10vw;
-    --padding-dynamic-outer: 2vw;
+    --padding-dynamic-gutter: 2vw;
   }
  }
  /* Medium width */
@@ -39,7 +39,6 @@
  @media (min-width: 1720px) {
   :root {
     --padding-dynamic-inner: 24vw;
-    --padding-dynamic-outer: 4vw;
   }
  }
 
@@ -54,8 +53,8 @@
 }
 
 .container-outer {
-  margin-left: var(--padding-dynamic-outer);
-  margin-right: var(--padding-dynamic-outer);
+  margin-left: var(--padding-dynamic-gutter);
+  margin-right: var(--padding-dynamic-gutter);
 }
 .container-card {
   padding: var(--padding-small);
@@ -63,7 +62,7 @@
 
 .grid-3-col {
   display: grid;
-  grid-gap: var(--padding-dynamic-outer);
+  grid-gap: var(--padding-dynamic-gutter);
   grid-template-columns: repeat(3, 1fr);
 }
 .grid-3-col--item-1 {
@@ -146,7 +145,7 @@ footer {
 
 /* Header */
 header {
-  margin: 1em;
+  margin: 1em var(--padding-dynamic-gutter);
 }
 
 nav ul li {
@@ -277,13 +276,10 @@ div.intro {
     .local-opportunities,
     .individual-actions {
       display: grid;
-      grid-gap: var(--padding-dynamic-outer);
+      grid-gap: var(--padding-dynamic-gutter);
       grid-template-columns: repeat(auto-fit, minmax(var(--width-card-small), 1fr));
     }
     
-    .local-opportunities {
-      /* grid-template-rows: repeat(auto-fit, minmax(24em, 1fr)); */
-    }
     .local-opportunities a {
       
       border-radius: var(--radius-border);
@@ -300,19 +296,34 @@ div.intro {
       border-radius: var(--radius-border);
     }
 
-      .local-opportunities img {
-        width: 100%;
-        height: 100%;
-        height: 12em;
-        object-fit: cover;
-        margin-bottom: 1em;
-      }
+    .local-opportunities img {
+      width: 100%;
+      height: 100%;
+      height: 12em;
+      object-fit: cover;
+      margin-bottom: 1em;
+    }
 
-      .local-opportunities a > li h3 {
-        margin-bottom: 0.4em;
-        font-size: 3em;
-      }
+    .local-opportunities .container-card {
+      display: flex;
+      flex-direction: column;
+      height: calc(100% - var(--padding-small) - var(--padding-small));
+      justify-content: space-between;
+    }
 
+    .local-opportunities h3 {
+      margin-bottom: 0.4em;
+      font-size: 3em;
+    }
+
+    .local-opportunities .outline-button {
+      display: inline-block;
+      height: 3em;
+      padding: 0 1.5em;
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+       
 
 
     /* individual-actions */
@@ -416,7 +427,7 @@ ul.social li {
   max-width: 1.2em;
 }
 
-a.outline-button,
+.outline-button,
 a.filled-button {
   height: 3em;
   line-height: 3em;
@@ -428,8 +439,14 @@ a.filled-button {
   text-decoration: none;
 }
 
-a.outline-button {
+.outline-button {
   border: 2px solid var(--colour-primary);
+}
+
+.outline-button.on-dark {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 2px solid white;
 }
 
 a.filled-button {
@@ -499,7 +516,7 @@ ul.comments li p {
 
 div.photos {
   display: grid;
-  grid-gap: var(--padding-dynamic-outer);
+  grid-gap: var(--padding-dynamic-gutter);
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, 16vh);
 }
@@ -508,6 +525,7 @@ div.photos img {
   object-fit: cover;
   width: 100%;
   height: 100%;
+  border-radius: var(--radius-border);
 }
 
 div.photos img:nth-child(1) {

@@ -38,10 +38,9 @@ layout: default
     {% for area in opp.associated-areas %}
     {% if area == page.slug %}
     <a href="{{ site.url }}/opportunities/{{ opp.slug }}">
-      <li
+      <li class="container-card"
         style="background: linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.5) ), url({{ opp.image-url }}) no-repeat center center">
-        <!-- <img src="{{ opp.image-url }}" alt="Image for {{ opp.title }}"> -->
-        <div class="container-card">
+        <div>
           <h4>
             {% if opp.cta %}
             {{ opp.cta }}
@@ -51,6 +50,7 @@ layout: default
           </h4>
           <h3>{{ opp.title }}</h3>
         </div>
+        <div class="outline-button on-dark" href="{{ site.url }}/opportunities/{{ opp.slug }}">View</div>
       </li>
     </a>
     {% endif %}
@@ -84,7 +84,7 @@ layout: default
 <section class="container-inner">
   <h2>Mobilise</h2>
   <p>Upcoming marches, rallys, and other events.</p>
-  <ul class="events container-card">
+  <ul class="events plain-ul">
     {% for event in page.events %}
     <li>
       <p>{{ event.start-date | date_to_long_string: "ordinal" }}</p>
