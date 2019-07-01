@@ -221,21 +221,11 @@ section {
 
 /* Home */
 
-
-div.directory-intro {
-  max-width: var(--width-card-medium);
-  margin: 0 auto 2em;
-}
-
 div.directory-index {
   display: flex;
   justify-content: space-between;
-  max-width: var(--width-card-medium);
+  max-width: 32em;
   margin: 0 auto;
-}
-
-div.directory-footer {
-  margin-top: 1em;
 }
 
 /* Area */

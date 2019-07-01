@@ -147,3 +147,35 @@ layout: default
     <a class="filled-button primary" href="{{ page.link-url }}">Visit site →</a>
   </div>
 </section>
+
+<!-- Get involved -->
+{% if page.associated-opps %}
+<section class="container-inner">
+  <h2 class="center">Looking for something similar?</h2>
+
+  <ul class="local-opportunities plain-ul">
+    {% for opp in site.opportunities %}
+    {% for associated-opp in page.associated-opps %}
+    {% if opp.slug == associated-opp %}
+    <a href="{{ site.url }}/opportunities/{{ opp.slug }}">
+      <li class="container-card"
+        style="background: linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.5) ), url({{ opp.image-url }}) no-repeat center center">
+        <div>
+          <h4>
+            {% if opp.cta %}
+            {{ opp.cta }}
+            {% else %}
+            Help out at
+            {% endif %}
+          </h4>
+          <h3>{{ opp.title }}</h3>
+        </div>
+        <div class="outline-button on-dark" href="{{ site.url }}/opportunities/{{ opp.slug }}">View</div>
+      </li>
+    </a>
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}

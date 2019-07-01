@@ -21,15 +21,6 @@ comments:
   - author: danny-white
     content: Just show up on a Saturday any time between 10am and 2pm. Everyone there is chill and happy for help. Bring good shoes!
     date: 2019-06-27 17:00:00 -0400
-  - author: lexi-lombari
-    content: Another comment about Brooklyn Grange.
-    date: 2019-06-27 17:00:00 -0400
-  - author: danny-white
-    content: Yet another comment. Yet another comment. Yet another comment. Yet another comment. Yet another comment. Yet another comment. Yet another comment. Yet another comment. Yet another comment. Yet another comment. Yet another comment. Yet another comment. Yet another comment. Yet another comment. Yet another comment. Yet another comment.
-    date: 2019-06-27 17:00:00 -0400
-  - author: lexi-lombari
-    content: Another comment about Brooklyn Grange.
-    date: 2019-06-27 17:00:00 -0400
 visitors:
   - danny-white
   - lexi-lombari
