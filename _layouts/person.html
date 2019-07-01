@@ -2,28 +2,30 @@
 layout: default
 ---
 
-<div>
-  <div class="center">
-    <img class="hero" src="{{ page.image-url }}" alt="{{ page.title }}" />
-    <h2>{{ page.title }}</h2>
-    {% if page.link-url %}
-    <p>
-      <a href="{{ page.link-url }}" target="_blank">Website →</a>
-    </p>
-    {% endif %}
-  </div>
+<section class="container-inner">
+  <img class="hero" src="{{ page.image-url }}" alt="{{ page.title }}" />
+  <p><a href="{{ site.url }}/people">People</a> <span>/</span></p>
+  <h1>{{ page.title }}</h1>
+  {% if page.link-url %}
+  <p>
+    <a href="{{ page.link-url }}" target="_blank">Website →</a>
+  </p>
+  {% endif %}
+</section>
 
 
-
-  {% if page.email %}
-  <h4>Email</h4>
+{% if page.email %}
+<section class="container-inner">
+  <h2>Email</h2>
   <p>
     <a href="mailto:{{ page.email }}">{{ page.email }}</a>
   </p>
-  {% endif %}
+</section>
+{% endif %}
 
-  {% if page.associated-orgs %}
-  <h5>Orgs</h5>
+{% if page.associated-orgs %}
+<section class="container-inner">
+  <h2>Orgs</h2>
   <ul>
     {% for org in page.orgs %}
     <li>
@@ -31,10 +33,12 @@ layout: default
     </li>
     {% endfor %}
   </ul>
-  {% endif %}
+</section>
+{% endif %}
 
-  {% if page.associated-areas %}
-  <h5>Areas</h5>
+{% if page.associated-areas %}
+<section class="container-inner">
+  <h2>Areas</h2>
   <ul>
     {% for associated-area in page.associated-areas %}
     {% for area in site.areas %}
@@ -44,19 +48,21 @@ layout: default
     {% endfor %}
     {% endfor %}
   </ul>
-  {% endif %}
+</section>
+{% endif %}
 
-  {% if page.recommendations %}
-  <h5>Recommendations</h5>
-  <ul class="container-card recommendations">
+{% if page.recommendations %}
+<section class="container-inner">
+  <h2>Recommendations</h2>
+  <ul class="container-card recommendations plain-ul">
     {% for recommendation in page.recommendations %}
     <li>
       <img src="{{ recommendation.image-url}}" alt="{{ recommendation.title }}">
-      <p><strong>{{ recommendation.title }}</strong></h4>
+      <p><strong>{{ recommendation.title }}</strong></h2>
         <p>{{ recommendation.commentary }}</p>
         <a href="{{ recommendation.link-url}}" target="_blank">View {{ recommendation.type }} →</a>
     </li>
     {% endfor %}
   </ul>
-  {% endif %}
-</div>
+</section>
+{% endif %}

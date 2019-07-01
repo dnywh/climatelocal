@@ -7,23 +7,23 @@ layout: default
 
   <div class="major-info">{{ content }}</div>
 
-  <p class="minor-info">
+  <div class="minor-info">
     {% for contributer in page.contributers %}
     {% for person in site.people %}
     {% if contributer == person.slug %}
 
     <a class="avatar" href="{{ site.url }}/people/{{ contributer }}">
-      <img src="{{ person.image-url }}" alt="Picture for {{ person.first-name }} {{ person.last-name }}"
+      <img src="{{ person.image-url }}" alt="Picture of {{ person.first-name }} {{ person.last-name }}"
         title="{{ person.first-name }} {{ person.last-name }}">
     </a>
 
-    Curated by
-    {{ person.first-name }}
-
+    <small>Curated by
+      {{ person.first-name }}
+    </small>
     {% endif %}
     {% endfor %}
     {% endfor %}
-  </p>
+  </div>
 </div>
 
 
@@ -31,7 +31,14 @@ layout: default
 <section id="opportunities" class="container-inner">
   <h2>Get involved</h2>
   <p>Local training or volunteering opportunities.</p>
-  <p>Filter: Food • Recyling • Buildings and Cities</p>
+  <div class="filter">
+    <span>Filter: </span>
+    <ul class="plain-ul">
+      {% for tag in site.tags %}
+      <li><a href="#opportunities">{{ tag.name }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
 
   <ul class="local-opportunities plain-ul">
     {% for opp in site.opportunities %}

@@ -13,9 +13,12 @@ link-url: https://www.bigreuse.org/service/volunteer/
 email: volunteer@bigreuse.org
 image-url: https://cdn.shoplightspeed.com/shops/610445/files/13725455/drop-off-tutu.jpg
 photos:
-  - https://cdn.shoplightspeed.com/shops/610445/files/13725899/volunteer-1600-min.jpg
-  - https://cdn.shoplightspeed.com/shops/610445/files/13725455/drop-off-tutu.jpg
-  - https://cdn.shoplightspeed.com/shops/610445/files/13725464/tree-care.jpg
+  - image-url: https://cdn.shoplightspeed.com/shops/610445/files/13725899/volunteer-1600-min.jpg
+    alt:
+  - image-url: https://cdn.shoplightspeed.com/shops/610445/files/13725455/drop-off-tutu.jpg
+    alt:
+  - image-url: https://cdn.shoplightspeed.com/shops/610445/files/13725464/tree-care.jpg
+    alt:
 visitors:
   - danny-white
   - lexi-lombari

@@ -1,5 +1,6 @@
 ---
 layout: area
+in-progress: true
 title: Sunshine Coast
 state: Queensland
 country: Australia

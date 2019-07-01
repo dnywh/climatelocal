@@ -29,24 +29,33 @@ layout: default
     <div class="directory-country">
       <h5>USA</h5>
       <ul>
-        {% for area in site.areas %} {% if area.country == "USA" and area.type !=
-  "sub" %}
+        {% for area in site.areas %} {% if area.country == "USA" %}
         <li>
+          {% if area.in-progress %}
+          {{ area.title }} 🚧
+          {% else %}
           <a href="../areas/{{ area.slug }}">{{ area.title }}</a>
+          {% endif %}
         </li>
-        {% endif %} {% endfor %}
+        {% endif %}
+        {% endfor %}
       </ul>
     </div>
 
     <div class="directory-country">
       <h5>Australia</h5>
       <ul>
-        {% for area in site.areas %} {% if area.country == "Australia" and area.type
-  != "sub" %}
+        {% for area in site.areas %}
+        {% if area.country == "Australia" %}
         <li>
+          {% if area.in-progress %}
+          {{ area.title }} 🚧
+          {% else %}
           <a href="../areas/{{ area.slug }}">{{ area.title }}</a>
+          {% endif %}
         </li>
-        {% endif %} {% endfor %}
+        {% endif %}
+        {% endfor %}
       </ul>
     </div>
   </div>

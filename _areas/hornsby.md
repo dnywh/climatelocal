@@ -1,5 +1,6 @@
 ---
 layout: area
+in-progress: true
 title: Hornsby
 state: New South Wales
 country: Australia

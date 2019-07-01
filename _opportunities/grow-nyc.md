@@ -10,9 +10,12 @@ associated-tags:
 link-url: https://www.grownyc.org/volunteer
 image-url: https://www.grownyc.org/files/greenmarket_homepage_photo_small.jpg
 photos:
-  - https://www.grownyc.org/files/job.jpg
-  - https://cdn.greatnonprofits.org/images/uploads/organizations/ermin.jpg
-  - http://theglorifiedtomato.com/wp-content/uploads/2012/07/DSC_8841.jpg
+  - image-url: https://www.grownyc.org/files/job.jpg
+    alt:
+  - image-url: https://cdn.greatnonprofits.org/images/uploads/organizations/ermin.jpg
+    alt:
+  - image-url: http://theglorifiedtomato.com/wp-content/uploads/2012/07/DSC_8841.jpg
+    alt:
 visitors:
   - danny-white
 social:

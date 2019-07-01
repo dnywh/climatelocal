@@ -4,7 +4,8 @@ layout: default
 <!-- Top -->
 <div class="photos container-outer">
   {% for photo in page.photos %}
-  <img src="{{ photo }}" alt="An image of {{ page.title }}">
+  <img src="{{ photo.image-url }}"
+    alt="{% if photo.alt %}{{ photo.alt }}{% else %}Activity happening at {{ page.title }}{% endif %}">
   {% endfor %}
 </div>
 <section class="grid-3-col container-inner">
@@ -72,19 +73,21 @@ layout: default
   <div class="grid-3-col--item-4">
     <section>
       <h2>Contact</h2>
-      <ul class="plain-ul social">
-        <a href="mailto:{{ page.email }}">
-          <li>
-            <img src="https://ik.imagekit.io/dw/cl/mail.png" alt="Email {{ page.title }}">
-          </li>
-        </a>
+      <ul class="plain-ul circle-ul">
+        {% if page.email %}
+        <li>
+          <a href="mailto:{{ page.email }}">
+            <img src="{{ site.url }}/assets/images/email.svg" alt="Email {{ page.title }}">
+          </a>
+        </li>
+        {% endif %}
         {% for item in page.social %}
-        <a href="{{ item.url }}" target="_blank">
-          <li>
-            <img src="https://ik.imagekit.io/dw/cl/{{ item.type }}.png"
+        <li>
+          <a href="{{ item.url }}" target="_blank">
+            <img src="{{ site.url }}/assets/images/{{ item.type }}.svg"
               alt="{{ page.title }} on {{ item.type | capitalize }}">
-          </li>
-        </a>
+          </a>
+        </li>
         {% endfor %}
       </ul>
     </section>
@@ -93,13 +96,13 @@ layout: default
     {% if page.visitors %}
     <section>
       <h2>Who's been</h2>
-      <ul class="plain-ul facepile">
+      <ul class="plain-ul circle-ul">
         {% for visitor in page.visitors %}
         {% for person in site.people %}
         {% if visitor == person.slug %}
         <li>
           <a class="avatar" href="{{ site.url }}/people/{{ person.slug }}">
-            <img src="{{ person.image-url }}" alt="Picture for {{ person.first-name }} {{ person.last-name }}"
+            <img src="{{ person.image-url }}" alt="Picture of {{ person.first-name }} {{ person.last-name }}"
               title="{{ person.first-name }} {{ person.last-name }}">
           </a>
         </li>
@@ -126,7 +129,7 @@ layout: default
     {% if comment.author == person.slug %}
     <li>
       <a class="avatar" href="{{ site.url }}/people/{{ person.slug }}">
-        <img src="{{ person.image-url }}" alt="Picture for {{ person.first-name }} {{ person.last-name }}"
+        <img src="{{ person.image-url }}" alt="Picture of {{ person.first-name }} {{ person.last-name }}"
           title="{{ person.first-name }} {{ person.last-name }}">
       </a>
       <span><strong>{{ person.first-name }} {{ person.last-name }}</strong> on
@@ -141,7 +144,7 @@ layout: default
   {% endif %}
 </section>
 
-<section class="container-inner">
+<section class="container-inner large-clearance">
   <h2 class="center">Ready to try {{ page.title }}?</h2>
   <div class="container-inner">
     <a class="filled-button primary" href="{{ page.link-url }}">Visit site →</a>
