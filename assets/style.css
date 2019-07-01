@@ -281,10 +281,8 @@ div.intro {
     }
     
     .local-opportunities a {
-      
       border-radius: var(--radius-border);
       background: var(--colour-grey-300);
-      
       text-decoration: none;
       height: 24em;
     }
