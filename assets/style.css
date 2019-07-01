@@ -138,7 +138,7 @@ h1, h2, h3, h4, h5 {
 
 
 header,
-footer {
+footer div {
   display: flex;
   justify-content: space-between;
 }
@@ -146,6 +146,7 @@ footer {
 /* Header */
 header {
   margin: 1em var(--padding-dynamic-gutter);
+  align-items: center;
 }
 
 nav ul li {
@@ -165,9 +166,16 @@ header h1 {
 
 /* Footer */
 footer {
-  margin: 6em 1em 3em;
+  margin-top: 3em;
+  padding: 6em 0 3em;
+  background-color: var(--colour-grey-100);
 }
 
+  footer h4 {
+    color: var(--colour-grey-500);
+  }
+
+/* Main */
 main h1 {
   font-weight: 900;
   font-size: 2.5em;
