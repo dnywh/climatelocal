@@ -23,19 +23,16 @@ layout: default
       {% endfor %}
       <h1>{{ page.title }}</h1>
 
-      <!-- Phone -->
-      {% if page.phone-no %}
-      <p>{{ page.phone-no }}</p>
-      {% endif %}
-
       <!-- Address -->
       {% if page.address-line-1 %}
-      <p>{{ page.address-line-1 }}
-        {% if page.address-line-2 %}
-        <br>{{ page.address-line-2 }}
-        {% endif %}
-      </p>
-      <p><a href="{{ page.address-url }}" target="_blank">View map →</a></p>
+      <address>
+        <p>{{ page.address-line-1 }}
+          {% if page.address-line-2 %}
+          <br>{{ page.address-line-2 }}
+          {% endif %}
+        </p>
+        <p><a href="{{ page.address-url }}" target="_blank">View map →</a></p>
+      </address>
       {% endif %}
     </section>
   </div>
@@ -82,7 +79,15 @@ layout: default
         {% if page.email %}
         <li>
           <a href="mailto:{{ page.email }}">
-            <img src="{{ site.url }}/assets/images/email.svg" alt="Email {{ page.title }}">
+            <img src="{{ site.url }}/assets/images/email.svg" alt="Email {{ page.title }}"
+              title="Email {{ page.title }}">
+          </a>
+        </li>
+        {% endif %}
+        {% if page.phone-no %}
+        <li>
+          <a href="tel:{{ page.phone-no }}">
+            <img src="{{ site.url }}/assets/images/phone.svg" alt="Call {{ page.title }}" title="Call {{ page.title }}">
           </a>
         </li>
         {% endif %}
@@ -90,7 +95,8 @@ layout: default
         <li>
           <a href="{{ item.url }}" target="_blank">
             <img src="{{ site.url }}/assets/images/{{ item.type }}.svg"
-              alt="{{ page.title }} on {{ item.type | capitalize }}">
+              alt="{{ page.title }} on {{ item.type | capitalize }}"
+              title="{{ page.title }} on {{ item.type | capitalize }}">
           </a>
         </li>
         {% endfor %}

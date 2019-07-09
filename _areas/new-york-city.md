@@ -4,6 +4,7 @@ title: New York City
 state: New York
 country: USA
 contributers: danny-white
+
 local-groups: 
   - name: 350.org New York City
     parent: 350.org
@@ -13,6 +14,7 @@ local-groups:
     parent: Sunrise Movement
     url: https://twitter.com/sunrisemvmtnyc
     image-url: https://pbs.twimg.com/profile_images/925762246591922176/ZXkD9xVi_400x400.jpg
+
 individual-actions:
   - name: Opt-out of junk mail
     investment: 5 min
@@ -29,6 +31,17 @@ individual-actions:
     url: https://www.nerdwallet.com/blog/banking/socially-responsible-banks/
     cta: See all responsible banks
     notes: Large bank invests in fossil fuel projects. There are several environmentally-responsible bank or credit union for New Yorkers to switch to. They include Amalgamated Bank and Spring Bank.
+
+disposal:
+  - type: Electronic waste
+    providers: Staples
+    url: https://www.staples.com/sbd/cre/marketing/sustainability-center/recycling-services/electronics/?icid=RecyclingServices:middlecontent:2:electronicsrecycling:20170901
+    notes: Also look out for the city's events.
+  - type: Soft plastics
+    providers: Rite Aid, Staples, Key Food
+    notes: Quite a few supermarkets accept soft plastics, as does Staples.
+  - type: Batteries
+    providers: Home Depot, Staples
 
 events:
   - title: SAFE Disposal Event

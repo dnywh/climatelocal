@@ -6,7 +6,7 @@ associated-areas: tampa-bay-area
 address-line-1: 5721 Grand Blvd
 address-line-2: New Port Richey, FL 34652
 address-url: https://goo.gl/maps/zrSpXX98b1WJuQ836
-phone-no: (727) 271-2333
+phone-no: "+17272712333"
 associated-tags: 
   - Composting
   - Reduced Food Waste
