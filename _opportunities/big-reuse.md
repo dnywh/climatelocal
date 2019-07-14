@@ -15,10 +15,13 @@ image-url: https://cdn.shoplightspeed.com/shops/610445/files/13725455/drop-off-t
 photos:
   - image-url: https://cdn.shoplightspeed.com/shops/610445/files/13725899/volunteer-1600-min.jpg
     alt:
+    credit: bigreuse.org
   - image-url: https://cdn.shoplightspeed.com/shops/610445/files/13725455/drop-off-tutu.jpg
     alt:
+    credit: bigreuse.org
   - image-url: https://cdn.shoplightspeed.com/shops/610445/files/13725464/tree-care.jpg
     alt:
+    credit: bigreuse.org
 visitors:
   - danny-white
   - lexi-lombari

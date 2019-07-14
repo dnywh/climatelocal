@@ -4,8 +4,16 @@ layout: default
 <!-- Top -->
 <div class="photos container-outer">
   {% for photo in page.photos %}
-  <img src="{{ photo.image-url }}"
-    alt="{% if photo.alt %}{{ photo.alt }}{% else %}Activity happening at {{ page.title }}{% endif %}">
+  <div class="photo-credit">
+    <img src="{{ photo.image-url }}"
+      alt="{% if photo.alt %}{{ photo.alt }}{% else %}Activity happening at {{ page.title }}{% endif %}">
+    {% if photo.credit %}
+    <div class="tooltip">
+      <img src="{{ site.url }}/assets/images/camera.svg" alt="Image credit icon">
+      <span class="tooltip-text">{{ photo.credit }}</span>
+    </div>
+    {% endif %}
+  </div>
   {% endfor %}
 </div>
 <section class="grid-3-col container-inner">

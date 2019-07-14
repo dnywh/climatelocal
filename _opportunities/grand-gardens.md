@@ -16,10 +16,13 @@ image-url: https://ik.imagekit.io/dw/cl/grand-gardens-1.jpg
 photos:
   - image-url: https://ik.imagekit.io/dw/cl/grand-gardens-1.jpg
     alt: Person tending the rooftop garden
+    credit: newsportrichey.org
   - image-url: https://ik.imagekit.io/dw/cl/grand-gardens-2.jpg
     alt: Facilitators, Travis Morehead and Dell deChant, discuss layout for garden plots that will be available to local residents to grow their own vegetables.
+    credit: newsportrichey.org
   - image-url: https://www.tampabay.com/storyimage/HI/20151203/ARTICLE/312039370/EP/1/1/EP-312039370.jpg&MaxW=1200&Q=66
     alt: Reggie Gauvin, 43, shovels compost on to garden beds at the newly established Grand Gardens in New Port Richey.
+    credit: tampabay.com
 social:
   - type: facebook
     url: https://www.facebook.com/pages/The-Grand-Gardens-Community-Garden/356985644667166

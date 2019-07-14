@@ -12,10 +12,13 @@ image-url: https://www.grownyc.org/files/greenmarket_homepage_photo_small.jpg
 photos:
   - image-url: https://www.grownyc.org/files/job.jpg
     alt:
+    credit: grownyc.org
   - image-url: https://cdn.greatnonprofits.org/images/uploads/organizations/ermin.jpg
     alt:
+    credit: greatnonprofits.org
   - image-url: http://theglorifiedtomato.com/wp-content/uploads/2012/07/DSC_8841.jpg
     alt:
+    credit: theglorifiedtomato.com
 visitors:
   - danny-white
 social:
